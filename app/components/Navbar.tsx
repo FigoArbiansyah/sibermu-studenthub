@@ -141,7 +141,7 @@ export function Navbar({
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden sm:inline text-xs">Cari...</span>
-              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-[10px] leading-none font-mono font-semibold text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-[0_1px_0_0] shadow-slate-300 dark:shadow-slate-700 transition-colors group-hover:text-teal-500 dark:group-hover:text-teal-400">
+              <kbd className="hidden lg:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-[10px] leading-none font-mono font-semibold text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-[0_1px_0_0] shadow-slate-300 dark:shadow-slate-700 transition-colors group-hover:text-teal-500 dark:group-hover:text-teal-400">
                 ⌘K
               </kbd>
             </button>
@@ -159,7 +159,7 @@ export function Navbar({
             {/* Clean Solid Portal Button */}
             <a
               href="#layanan"
-              className="hidden sm:inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-slate-100 shadow-xs transition-all interactive-lift hover:shadow-md active:scale-95"
+              className="hidden lg:inline-flex items-center gap-1.5 px-4 py-1.5 text-xs font-semibold rounded-full bg-slate-900 dark:bg-white text-white dark:text-slate-950 hover:bg-slate-800 dark:hover:bg-slate-100 shadow-xs transition-all interactive-lift hover:shadow-md active:scale-95"
             >
               <span>Portal Layanan</span>
               <ExternalLink className="w-3 h-3 opacity-70" />

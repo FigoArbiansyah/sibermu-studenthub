@@ -176,41 +176,44 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
 
         {/* Clean Segmented Control Switcher */}
         <div className="flex justify-center mb-10">
-          <div className="inline-flex p-1 rounded-2xl bg-slate-200/70 dark:bg-slate-900/90 border border-slate-300/60 dark:border-white/[0.08] shadow-xs">
+          <div className="flex w-full sm:w-auto sm:inline-flex p-1 rounded-2xl bg-slate-200/70 dark:bg-slate-900/90 border border-slate-300/60 dark:border-white/[0.08] shadow-xs">
             <button
               onClick={() => setMainView("services")}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              className={`flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 mainView === "services"
                   ? "bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs font-bold"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
               }`}
             >
-              <Layers className="w-3.5 h-3.5" />
-              <span>Direktori Layanan</span>
+              <Layers className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Direktori Layanan</span>
+              <span className="sm:hidden">Layanan</span>
             </button>
 
             <button
               onClick={() => setMainView("tracker")}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              className={`flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 mainView === "tracker"
                   ? "bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs font-bold"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
               }`}
             >
-              <SearchCheck className="w-3.5 h-3.5" />
-              <span>Lacak Status Tiket</span>
+              <SearchCheck className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Lacak Status Tiket</span>
+              <span className="sm:hidden">Lacak</span>
             </button>
 
             <button
               onClick={() => setMainView("simulator")}
-              className={`flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
+              className={`flex flex-1 sm:flex-none items-center justify-center gap-1.5 px-3 sm:px-4 py-2 rounded-xl text-xs font-semibold transition-all ${
                 mainView === "simulator"
                   ? "bg-white dark:bg-slate-800 text-slate-900 dark:text-white shadow-xs font-bold"
                   : "text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white"
               }`}
             >
-              <Calculator className="w-3.5 h-3.5" />
-              <span>Simulasi Beasiswa</span>
+              <Calculator className="w-3.5 h-3.5 shrink-0" />
+              <span className="hidden sm:inline">Simulasi Beasiswa</span>
+              <span className="sm:hidden">Simulasi</span>
             </button>
           </div>
         </div>
@@ -219,7 +222,7 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
         {mainView === "services" && (
           <div className="animate-in fade-in duration-300">
             {/* Category Filter Pills */}
-            <div className="flex items-center justify-center gap-2 overflow-x-auto pb-4 mb-8 text-xs">
+            <div className="-mx-4 sm:mx-0 flex items-center gap-2 overflow-x-auto px-4 sm:px-0 pb-4 mb-8 text-xs no-scrollbar">
               {categories.map((cat) => (
                 <button
                   key={cat.key}
@@ -535,7 +538,7 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
           onClick={() => setSelectedService(null)}
         >
           <div
-            className="w-full max-w-lg bg-white dark:bg-[#0B132B] rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-white/[0.08]"
+            className="w-full max-w-lg max-h-[90dvh] overflow-y-auto bg-white dark:bg-[#0B132B] rounded-2xl p-6 shadow-2xl border border-slate-200 dark:border-white/[0.08]"
             onClick={(e) => e.stopPropagation()}
           >
             <div className="flex items-start justify-between mb-4">

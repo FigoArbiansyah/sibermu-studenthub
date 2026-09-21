@@ -282,3 +282,12 @@ input[type="range"]:active {
 .interactive-lift:active {
   transform: translateY(0) scale(0.98);
 }
+
+/* Hide scrollbar while keeping scroll functionality (used on pill strips) */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}

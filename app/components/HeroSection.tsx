@@ -53,7 +53,7 @@ export function HeroSection() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Two-Column Editorial Hero Layout */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-8 items-center">
           {/* Left Column: Core Narrative & Actions */}
           <div className="lg:col-span-7 text-left space-y-6">
             {/* Editorial Category Tracker */}
@@ -84,10 +84,10 @@ export function HeroSection() {
             </p>
 
             {/* Action Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2">
               <a
                 href="#layanan"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-lg shadow-teal-600/25 transition-all interactive-lift hover:shadow-teal-500/35 hover:-translate-y-0.5 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-lg shadow-teal-600/25 transition-all interactive-lift hover:shadow-teal-500/35 hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <GraduationCap className="w-4 h-4" />
                 <span>Portal Layanan Mahasiswa</span>
@@ -96,10 +96,10 @@ export function HeroSection() {
 
               <a
                 href="#aik"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-all interactive-lift hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
+                className="inline-flex items-center justify-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-all interactive-lift hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <BookOpen className="w-4 h-4 text-amber-500" />
-                <span>Ruang Al-Islam & Syiar</span>
+                <span>Ruang Al-Islam &amp; Syiar</span>
               </a>
             </div>
 
@@ -161,7 +161,7 @@ export function HeroSection() {
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"
-                  className="w-full h-[380px] sm:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-[260px] sm:h-[400px] lg:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
 
@@ -194,7 +194,7 @@ export function HeroSection() {
               </div>
 
               {/* Floating Badge 1: Trophy & Prestasi (Balanced single top-left floating accent) */}
-              <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 p-3 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
+              <div className="absolute -top-3 left-2 sm:-top-5 sm:-left-5 p-2.5 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-2.5 sm:gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-lg">
                   🏆
                 </div>
