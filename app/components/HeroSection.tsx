@@ -87,7 +87,7 @@ export function HeroSection() {
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <a
                 href="#layanan"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-lg shadow-teal-600/25 transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 shadow-lg shadow-teal-600/25 transition-all interactive-lift hover:shadow-teal-500/35 hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <GraduationCap className="w-4 h-4" />
                 <span>Portal Layanan Mahasiswa</span>
@@ -96,7 +96,7 @@ export function HeroSection() {
 
               <a
                 href="#aik"
-                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-all hover:scale-[1.02] active:scale-[0.98]"
+                className="inline-flex items-center gap-2 px-6 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-slate-700 dark:text-slate-200 bg-white/90 dark:bg-slate-900/90 hover:bg-slate-100 dark:hover:bg-slate-800 border border-slate-200 dark:border-slate-800 backdrop-blur-md shadow-xs transition-all interactive-lift hover:shadow-md hover:-translate-y-0.5 active:scale-[0.98]"
               >
                 <BookOpen className="w-4 h-4 text-amber-500" />
                 <span>Ruang Al-Islam & Syiar</span>
@@ -180,7 +180,7 @@ export function HeroSection() {
               </div>
 
               {/* Floating Badge 1: Trophy & Prestasi */}
-              <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 p-3 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-left duration-500">
+              <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 p-3 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-lg">
                   🏆
                 </div>
@@ -195,7 +195,7 @@ export function HeroSection() {
               </div>
 
               {/* Floating Badge 2: Muhammadiyah Identity */}
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 p-2.5 sm:p-3 rounded-2xl glass-card border border-teal-500/30 shadow-xl flex items-center gap-2.5">
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 p-2.5 sm:p-3 rounded-2xl glass-card border border-teal-500/30 shadow-xl flex items-center gap-2.5 interactive-lift hover:scale-105 cursor-default">
                 <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 border border-slate-200 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
                   <img
                     src="/images/sibermu-emblem.png"

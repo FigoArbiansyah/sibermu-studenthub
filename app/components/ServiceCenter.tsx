@@ -240,7 +240,7 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
               {filteredServices.map((service) => (
                 <SpotlightCard
                   key={service.id}
-                  className="p-6 flex flex-col justify-between hover:border-teal-500/40 hover:shadow-lg transition-all duration-300 group border border-slate-200/80 dark:border-white/[0.08]"
+                  className="p-6 flex flex-col justify-between hover:border-teal-500/50 hover:shadow-xl hover:shadow-teal-500/10 hover:-translate-y-1 transition-all duration-300 group border border-slate-200/80 dark:border-white/[0.08] interactive-lift"
                 >
                   <div>
                     <div className="flex items-center justify-between gap-3 mb-4">

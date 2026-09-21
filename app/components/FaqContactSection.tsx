@@ -93,19 +93,23 @@ export function FaqContactSection() {
               return (
                 <div
                   key={index}
-                  className="rounded-2xl glass-card overflow-hidden border border-slate-200/80 dark:border-slate-800 transition-all duration-200"
+                  className={`rounded-2xl glass-card overflow-hidden border transition-all duration-300 ${
+                    isOpen
+                      ? "border-teal-500/50 shadow-md shadow-teal-500/5"
+                      : "border-slate-200/80 dark:border-slate-800 hover:border-teal-500/40 hover:-translate-y-0.5 hover:shadow-xs"
+                  }`}
                 >
                   <button
                     id={`faq-question-${index}`}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
                     aria-expanded={isOpen}
                     aria-controls={`faq-answer-${index}`}
-                    className="w-full text-left p-5 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:outline-none"
+                    className="w-full text-left p-5 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:outline-none group"
                   >
-                    <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
+                    <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                       {faq.question}
                     </span>
-                    <span className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 shrink-0">
+                    <span className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 group-hover:text-teal-500 group-hover:bg-teal-500/10 transition-colors shrink-0">
                       {isOpen ? <ChevronUp className="w-4 h-4" aria-hidden="true" /> : <ChevronDown className="w-4 h-4" aria-hidden="true" />}
                     </span>
                   </button>
@@ -212,7 +216,7 @@ export function FaqContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 rounded-xl font-bold text-white bg-teal-600 hover:bg-teal-500 shadow-md shadow-teal-600/20 flex items-center justify-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-teal-500"
+                  className="w-full py-2.5 rounded-xl font-bold text-white bg-teal-600 hover:bg-teal-500 shadow-md shadow-teal-600/20 flex items-center justify-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-teal-500 interactive-lift hover:shadow-lg hover:shadow-teal-500/25"
                 >
                   <Send className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Kirim Pesan ke Biro</span>

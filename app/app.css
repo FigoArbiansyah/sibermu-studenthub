@@ -227,3 +227,58 @@
 .spotlight-card:hover::before {
   opacity: 1;
 }
+
+/* Semantic Native OS Cursor Experience (Consistent & Accessible UX) */
+button,
+a,
+select,
+summary,
+label[for],
+[role="button"],
+[role="tab"],
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+input[type="checkbox"],
+input[type="radio"],
+input[type="range"],
+.cursor-pointer {
+  cursor: pointer;
+}
+
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="url"],
+input[type="password"],
+textarea,
+[contenteditable="true"] {
+  cursor: text;
+}
+
+button:disabled,
+input:disabled,
+select:disabled,
+textarea:disabled,
+[aria-disabled="true"],
+.disabled {
+  cursor: not-allowed !important;
+  opacity: 0.6;
+}
+
+input[type="range"]:active {
+  cursor: grabbing;
+}
+
+/* Micro-Interaction Utility: Tactile Lift & Spring Bounce on Hover */
+.interactive-lift {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+.interactive-lift:hover {
+  transform: translateY(-2px);
+}
+.interactive-lift:active {
+  transform: translateY(0) scale(0.98);
+}
