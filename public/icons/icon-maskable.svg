@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <linearGradient id="bgGradMask" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+  <!-- Full bleed background for maskable icon safe zone -->
+  <rect width="512" height="512" fill="url(#bgGradMask)"/>
+  <g transform="translate(256, 230)">
+    <!-- Central Solar Aura -->
+    <circle r="80" fill="#0D9488" fill-opacity="0.3"/>
+    <circle r="60" fill="#F59E0B" fill-opacity="0.4"/>
+    <circle r="40" fill="#F59E0B"/>
+    <path d="M0 -95 L0 -65 M0 95 L0 65 M-95 0 L-65 0 M95 0 L65 0 M-68 -68 L-46 -46 M68 68 L46 46 M-68 68 L-46 46 M68 -68 L46 -46" stroke="#F59E0B" stroke-width="8" stroke-linecap="round"/>
+  </g>
+  <text x="256" y="380" text-anchor="middle" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="36" font-weight="900" letter-spacing="3">SIBERMU</text>
+</svg>

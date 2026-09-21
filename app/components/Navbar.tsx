@@ -27,14 +27,21 @@ export function Navbar({
   const [scrollProgress, setScrollProgress] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setIsScrolled(window.scrollY > 20);
-      const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
-      if (totalScroll > 0) {
-        setScrollProgress((window.scrollY / totalScroll) * 100);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setIsScrolled(window.scrollY > 20);
+          const totalScroll = document.documentElement.scrollHeight - window.innerHeight;
+          if (totalScroll > 0) {
+            setScrollProgress((window.scrollY / totalScroll) * 100);
+          }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -56,6 +63,14 @@ export function Navbar({
           : "bg-transparent py-5 border-b border-transparent"
       }`}
     >
+      {/* Skip to Main Content Link for Screen Readers & Keyboard Navigation (WCAG 2.1 AA) */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-4 focus:z-[100] focus:px-4 focus:py-2 focus:bg-teal-600 focus:text-white focus:rounded-xl focus:shadow-xl focus:outline-none focus:ring-2 focus:ring-white text-xs font-bold transition-all"
+      >
+        Lewati ke Konten Utama
+      </a>
+
       {/* Ultra-thin Scroll Progress Bar at the absolute top */}
       <div className="absolute top-0 left-0 right-0 h-[2px] bg-transparent">
         <div
@@ -151,10 +166,12 @@ export function Navbar({
             <button
               id="mobile-menu-btn"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Menu"
-              className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800"
+              aria-expanded={mobileMenuOpen}
+              aria-controls="mobile-nav-menu"
+              aria-label={mobileMenuOpen ? "Tutup menu navigasi" : "Buka menu navigasi utama"}
+              className="lg:hidden p-2 rounded-xl text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:outline-none"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" aria-hidden="true" /> : <Menu className="w-5 h-5" aria-hidden="true" />}
             </button>
           </div>
         </div>
@@ -162,26 +179,31 @@ export function Navbar({
 
       {/* Mobile Drawer Navigation */}
       {mobileMenuOpen && (
-        <div className="lg:hidden bg-white/95 dark:bg-[#070B19]/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-1 shadow-2xl animate-in fade-in slide-in-from-top-2">
+        <div
+          id="mobile-nav-menu"
+          role="navigation"
+          aria-label="Navigasi Mobile"
+          className="lg:hidden bg-white/95 dark:bg-[#070B19]/95 backdrop-blur-xl border-t border-slate-200 dark:border-slate-800 px-4 pt-3 pb-6 space-y-1 shadow-2xl animate-in fade-in slide-in-from-top-2"
+        >
           {navLinks.map((item) => (
             <a
               key={item.name}
               href={item.href}
               onClick={() => setMobileMenuOpen(false)}
-              className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800"
+              className="flex items-center justify-between px-3 py-2.5 rounded-xl text-sm font-medium text-slate-700 dark:text-slate-200 hover:bg-slate-100 dark:hover:bg-slate-800 focus-visible:ring-2 focus-visible:ring-teal-500"
             >
               <span>{item.name}</span>
-              <ChevronRight className="w-4 h-4 text-slate-400" />
+              <ChevronRight className="w-4 h-4 text-slate-400" aria-hidden="true" />
             </a>
           ))}
           <div className="pt-3">
             <a
               href="#layanan"
               onClick={() => setMobileMenuOpen(false)}
-              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950"
+              className="w-full flex items-center justify-center gap-2 py-2.5 text-xs font-bold rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 shadow-xs focus-visible:ring-2 focus-visible:ring-teal-500"
             >
               <span>Akses Portal Layanan</span>
-              <ExternalLink className="w-3 h-3" />
+              <ExternalLink className="w-3 h-3" aria-hidden="true" />
             </a>
           </div>
         </div>

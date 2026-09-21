@@ -326,19 +326,24 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
 
             <div className="mt-6 flex gap-2">
               <div className="relative flex-1">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
+                <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" aria-hidden="true" />
+                <label htmlFor="ticket-tracker-query" className="sr-only">
+                  Cari Berkas Mahasiswa Berdasarkan NIM atau Nomor Tiket
+                </label>
                 <input
+                  id="ticket-tracker-query"
                   type="text"
                   value={trackerQuery}
                   onChange={(e) => setTrackerQuery(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleTrackSubmit()}
                   placeholder="Masukkan NIM Mahasiswa atau No. Tiket (contoh: 2024010088)..."
+                  aria-label="Masukkan NIM Mahasiswa atau No. Tiket"
                   className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl bg-white dark:bg-slate-900 border border-slate-300 dark:border-slate-800 text-slate-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-teal-500"
                 />
               </div>
               <button
                 onClick={() => handleTrackSubmit()}
-                className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-teal-600 hover:bg-teal-500 transition-all shrink-0"
+                className="px-5 py-2.5 rounded-xl text-xs font-bold text-white bg-teal-600 hover:bg-teal-500 transition-all shrink-0 focus-visible:ring-2 focus-visible:ring-teal-500"
               >
                 Cari Berkas
               </button>
@@ -434,10 +439,11 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
 
             <form onSubmit={handleSimulate} className="space-y-4 text-xs">
               <div>
-                <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                <label htmlFor="sim-ipk" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                   Indeks Prestasi Kumulatif (IPK):
                 </label>
                 <input
+                  id="sim-ipk"
                   type="number"
                   step="0.01"
                   min="2.00"
@@ -451,10 +457,11 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
 
               <div className="grid grid-cols-2 gap-3">
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="sim-semester" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Semester:
                   </label>
                   <select
+                    id="sim-semester"
                     value={simSemester}
                     onChange={(e) => setSimSemester(e.target.value)}
                     className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500"
@@ -466,10 +473,11 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
                   </select>
                 </div>
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="sim-track" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Jalur Unggulan:
                   </label>
                   <select
+                    id="sim-track"
                     value={simTrack}
                     onChange={(e) => setSimTrack(e.target.value)}
                     className="w-full px-3.5 py-2.5 text-xs rounded-xl bg-white dark:bg-slate-900 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-800 focus:outline-none focus:ring-2 focus:ring-teal-500"

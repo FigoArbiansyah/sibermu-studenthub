@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kemahasiswaan.sibermu.ac.id/sitemap.xml

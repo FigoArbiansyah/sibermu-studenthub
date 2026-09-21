@@ -133,6 +133,10 @@ export function CommunitySection() {
             <img
               src="/images/community-lab.jpg"
               alt="Aktivitas kolaborasi mahasiswa di laboratorium siber"
+              width="800"
+              height="533"
+              loading="lazy"
+              decoding="async"
               className="w-full h-full object-cover object-center"
             />
             <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/80 via-slate-950/30 to-transparent" />

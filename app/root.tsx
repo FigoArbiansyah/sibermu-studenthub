@@ -6,7 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
 } from "react-router";
-
+import { useEffect } from "react";
 import type { Route } from "./+types/root";
 import "./app.css";
 
@@ -21,17 +21,90 @@ export const links: Route.LinksFunction = () => [
     rel: "stylesheet",
     href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
+  { rel: "manifest", href: "/manifest.webmanifest" },
+  { rel: "canonical", href: "https://kemahasiswaan.sibermu.ac.id/" },
+  {
+    rel: "preload",
+    as: "image",
+    href: "/images/hero-students.jpg",
+    type: "image/jpeg",
+    fetchPriority: "high",
+  },
+  { rel: "apple-touch-icon", href: "/icons/icon-192.svg" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
+  // Structured Data Schema.org (JSON-LD) for SEO
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollegeOrUniversity",
+        "@id": "https://kemahasiswaan.sibermu.ac.id/#organization",
+        "name": "Universitas Siber Muhammadiyah",
+        "alternateName": "SiberMu",
+        "url": "https://sibermu.ac.id",
+        "logo": "https://kemahasiswaan.sibermu.ac.id/favicon.ico",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Jl. KH. Ahmad Dahlan No. 103",
+          "addressLocality": "Yogyakarta",
+          "postalCode": "55262",
+          "addressCountry": "ID"
+        },
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+62-274-555-7423",
+          "contactType": "student service",
+          "email": "kemahasiswaan@sibermu.ac.id"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://kemahasiswaan.sibermu.ac.id/#website",
+        "url": "https://kemahasiswaan.sibermu.ac.id/",
+        "name": "Biro Kemahasiswaan & AIK SiberMu",
+        "description": "Portal Layanan Kemahasiswaan Digital dan Al-Islam Kemuhammadiyahan",
+        "publisher": { "@id": "https://kemahasiswaan.sibermu.ac.id/#organization" },
+        "inLanguage": "id-ID"
+      }
+    ]
+  };
+
+  useEffect(() => {
+    // Service Worker Registration for PWA Offline Caching
+    if (typeof window !== "undefined" && "serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker
+          .register("/sw.js")
+          .then((reg) => {
+            if (import.meta.env.DEV) {
+              console.log("[PWA] Service Worker terdaftar:", reg.scope);
+            }
+          })
+          .catch((err) => {
+            console.warn("[PWA] Service Worker gagal didaftarkan:", err);
+          });
+      });
+    }
+  }, []);
+
   return (
     <html lang="id" className="scroll-smooth">
       <head>
         <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <meta name="theme-color" content="#0B132B" />
+        <meta name="mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Biro AIK SiberMu" />
         <Meta />
         <Links />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
       </head>
       <body className="bg-slate-50 text-slate-900 dark:bg-[#070B19] dark:text-slate-100 min-h-screen antialiased selection:bg-teal-500/20 selection:text-teal-400">
         {children}

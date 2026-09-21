@@ -197,6 +197,10 @@ END:VCALENDAR`;
               <img
                 src="/images/aik-seminar.jpg"
                 alt="Seminar Akademik Islam Kontemporer dan Kajian Tarjih di Universitas Siber Muhammadiyah"
+                width="800"
+                height="533"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover object-center"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent pointer-events-none" />

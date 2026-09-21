@@ -154,10 +154,11 @@ export function Footer() {
 
           <button
             onClick={scrollToTop}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors"
+            aria-label="Kembali ke atas halaman"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-300 border border-slate-800 transition-colors focus-visible:ring-2 focus-visible:ring-teal-500"
           >
             <span>Kembali ke Atas</span>
-            <ArrowUp className="w-3.5 h-3.5 text-teal-400" />
+            <ArrowUp className="w-3.5 h-3.5 text-teal-400" aria-hidden="true" />
           </button>
         </div>
       </div>

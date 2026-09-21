@@ -159,6 +159,10 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
           <img
             src="/images/podcast-studio.jpg"
             alt="Studio podcast syiar digital mahasiswa Universitas Siber Muhammadiyah"
+            width="800"
+            height="533"
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
           />
           <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/85 via-slate-950/30 to-transparent pointer-events-none" />
@@ -212,7 +216,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                     isPlaying ? "animate-pulse" : "opacity-40"
                   }`}
                   style={{
-                    height: isPlaying ? `${Math.max(20, (h * Math.random()).toFixed(0))}%` : "30%",
+                    height: isPlaying ? `${Math.max(20, Math.round(h * Math.random()))}%` : "30%",
                   }}
                 />
               ))}
@@ -266,15 +270,17 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                   <button
                     onClick={() => setIsMuted(!isMuted)}
                     className="text-slate-500 hover:text-teal-500"
+                    aria-label={isMuted ? "Aktifkan suara audio" : "Bisukan suara audio"}
                     title={isMuted ? "Unmute" : "Mute"}
                   >
-                    {isMuted ? <VolumeX className="w-3.5 h-3.5 text-rose-500" /> : <Volume2 className="w-3.5 h-3.5" />}
+                    {isMuted ? <VolumeX className="w-3.5 h-3.5 text-rose-500" aria-hidden="true" /> : <Volume2 className="w-3.5 h-3.5" aria-hidden="true" />}
                   </button>
                   <input
                     type="range"
                     min="0"
                     max="100"
                     value={isMuted ? 0 : volume}
+                    aria-label="Pengatur volume suara"
                     onChange={(e) => {
                       setVolume(Number(e.target.value));
                       setIsMuted(false);
@@ -286,6 +292,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                 <button
                   onClick={cycleSpeed}
                   className="px-2 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
+                  aria-label="Ubah kecepatan pemutaran audio"
                   title="Kecepatan pemutaran"
                 >
                   {playbackSpeed}x
@@ -293,34 +300,34 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
                 <button
                   onClick={handlePrev}
-                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500"
+                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
                   aria-label="Episode sebelumnya"
                 >
-                  <SkipBack className="w-4 h-4" />
+                  <SkipBack className="w-4 h-4" aria-hidden="true" />
                 </button>
 
                 <button
                   onClick={togglePlay}
-                  className="w-11 h-11 rounded-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white flex items-center justify-center shadow-lg shadow-teal-600/30 transition-transform active:scale-95"
-                  aria-label={isPlaying ? "Jeda podcast" : "Putar podcast"}
+                  className="w-11 h-11 rounded-full bg-gradient-to-r from-teal-600 to-emerald-600 hover:from-teal-500 hover:to-emerald-500 text-white flex items-center justify-center shadow-lg shadow-teal-600/30 transition-transform active:scale-95 focus-visible:ring-2 focus-visible:ring-teal-500"
+                  aria-label={isPlaying ? "Jeda pemutaran podcast" : "Mulai dengarkan podcast"}
                 >
-                  {isPlaying ? <Pause className="w-5 h-5" /> : <Play className="w-5 h-5 ml-0.5" />}
+                  {isPlaying ? <Pause className="w-5 h-5" aria-hidden="true" /> : <Play className="w-5 h-5 ml-0.5" aria-hidden="true" />}
                 </button>
 
                 <button
                   onClick={handleNext}
-                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500"
+                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
                   aria-label="Episode berikutnya"
                 >
-                  <SkipForward className="w-4 h-4" />
+                  <SkipForward className="w-4 h-4" aria-hidden="true" />
                 </button>
 
                 <button
                   onClick={handleShare}
-                  className="p-1.5 text-slate-500 hover:text-teal-500"
-                  aria-label="Bagikan episode"
+                  className="p-1.5 text-slate-500 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
+                  aria-label="Bagikan episode podcast"
                 >
-                  {copiedShare ? <Check className="w-4 h-4 text-emerald-500" /> : <Share2 className="w-4 h-4" />}
+                  {copiedShare ? <Check className="w-4 h-4 text-emerald-500" aria-hidden="true" /> : <Share2 className="w-4 h-4" aria-hidden="true" />}
                 </button>
               </div>
             </div>

@@ -17,18 +17,30 @@ import { Radio } from "lucide-react";
 
 export function meta({}: Route.MetaArgs) {
   return [
-    { title: "Biro Kemahasiswaan & Al-Islam Kemuhammadiyahan | Universitas Siber Muhammadiyah" },
+    { title: "Biro Kemahasiswaan & AIK | Universitas Siber Muhammadiyah" },
     {
       name: "description",
       content:
-        "Portal resmi Biro Kemahasiswaan dan AIK Universitas Siber Muhammadiyah (SiberMu). Layanan beasiswa siber, tracking dokumen digital, konseling online, Ormawa & UKM virtual, Hall of Fame prestasi, serta kajian Islam Berkemajuan.",
+        "Portal resmi Biro Kemahasiswaan dan AIK SiberMu: layanan beasiswa, konseling online, Ormawa & UKM virtual, dan pembinaan Islam Berkemajuan.",
     },
-    { property: "og:title", content: "Biro Kemahasiswaan & AIK - Universitas Siber Muhammadiyah" },
+    { property: "og:type", content: "website" },
+    { property: "og:url", content: "https://kemahasiswaan.sibermu.ac.id/" },
+    { property: "og:title", content: "Biro Kemahasiswaan & AIK | Universitas Siber Muhammadiyah" },
     {
       property: "og:description",
       content:
-        "Ekosistem kemahasiswaan digital dan penguatan nilai Islam Berkemajuan pertama di Indonesia.",
+        "Portal resmi Biro Kemahasiswaan dan AIK SiberMu: layanan beasiswa, konseling online, Ormawa & UKM virtual, dan pembinaan Islam Berkemajuan.",
     },
+    { property: "og:image", content: "https://kemahasiswaan.sibermu.ac.id/images/hero-students.jpg" },
+    { property: "og:locale", content: "id_ID" },
+    { property: "og:site_name", content: "Universitas Siber Muhammadiyah" },
+    { name: "twitter:card", content: "summary_large_image" },
+    { name: "twitter:title", content: "Biro Kemahasiswaan & AIK | Universitas Siber Muhammadiyah" },
+    {
+      name: "twitter:description",
+      content: "Portal kemahasiswaan digital dan penguatan nilai Islam Berkemajuan SiberMu.",
+    },
+    { name: "twitter:image", content: "https://kemahasiswaan.sibermu.ac.id/images/hero-students.jpg" },
   ];
 }
 
@@ -94,25 +106,33 @@ export default function Home() {
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, []);
 
-  // Intersection observer to track active section for navbar
+  // Intersection observer to track active section for navbar with rAF throttling
   useEffect(() => {
     const sections = ["beranda", "layanan", "komunitas", "prestasi", "aik", "syiar", "faq"];
+    let ticking = false;
+
     const handleScroll = () => {
-      const scrollPosition = window.scrollY + 200;
-      for (const section of sections) {
-        const el = document.getElementById(section);
-        if (el) {
-          const top = el.offsetTop;
-          const height = el.offsetHeight;
-          if (scrollPosition >= top && scrollPosition < top + height) {
-            setActiveSection(section);
-            break;
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          const scrollPosition = window.scrollY + 200;
+          for (const section of sections) {
+            const el = document.getElementById(section);
+            if (el) {
+              const top = el.offsetTop;
+              const height = el.offsetHeight;
+              if (scrollPosition >= top && scrollPosition < top + height) {
+                setActiveSection(section);
+                break;
+              }
+            }
           }
-        }
+          ticking = false;
+        });
+        ticking = true;
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -127,7 +147,7 @@ export default function Home() {
       />
 
       {/* Main Content Sections */}
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         {/* 1. Hero Section (Dual Pathway & Quick Intents) */}
         <HeroSection />
 

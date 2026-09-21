@@ -94,28 +94,30 @@ export function DailyHikmahWidget() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleLike}
-            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+            aria-label={isLiked ? "Batal menyukai kutipan ini" : "Sukai kutipan ini"}
+            className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all focus-visible:ring-2 focus-visible:ring-teal-500 ${
               isLiked
                 ? "bg-rose-500/15 text-rose-500"
                 : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-rose-500/10 hover:text-rose-500"
             }`}
           >
-            <Heart className={`w-3.5 h-3.5 ${isLiked ? "fill-rose-500" : ""}`} />
+            <Heart className={`w-3.5 h-3.5 ${isLiked ? "fill-rose-500" : ""}`} aria-hidden="true" />
             <span>{likes} Menyukai</span>
           </button>
 
           <button
             onClick={handleCopyQuote}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all"
+            aria-label="Salin teks kutipan hikmah ke clipboard"
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus-visible:ring-2 focus-visible:ring-teal-500"
           >
             {copied ? (
               <>
-                <Check className="w-3.5 h-3.5 text-emerald-500" />
+                <Check className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
                 <span className="text-emerald-600 dark:text-emerald-400 font-bold">Tersalin ke Clipboard!</span>
               </>
             ) : (
               <>
-                <Copy className="w-3.5 h-3.5" />
+                <Copy className="w-3.5 h-3.5" aria-hidden="true" />
                 <span>Salin Kutipan</span>
               </>
             )}
@@ -124,9 +126,10 @@ export function DailyHikmahWidget() {
 
         <button
           onClick={handleNextQuote}
-          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-sm active:scale-95"
+          aria-label="Tampilkan mutiara hikmah berikutnya"
+          className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-sm active:scale-95 focus-visible:ring-2 focus-visible:ring-teal-500"
         >
-          <RefreshCw className="w-3.5 h-3.5" />
+          <RefreshCw className="w-3.5 h-3.5" aria-hidden="true" />
           <span>Hikmah Selanjutnya ({currentIndex + 1}/{quotesData.length})</span>
         </button>
       </div>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#070B19"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0D9488"/>
+      <stop offset="50%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#F59E0B"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="40" fill="url(#bgGrad)"/>
+  <rect x="12" y="12" width="168" height="168" rx="32" fill="none" stroke="url(#accentGrad)" stroke-width="3" stroke-opacity="0.5"/>
+  <g transform="translate(96, 96)">
+    <!-- Sunburst rays -->
+    <circle r="34" fill="#0D9488" fill-opacity="0.2"/>
+    <circle r="26" fill="#F59E0B" fill-opacity="0.3"/>
+    <circle r="18" fill="#F59E0B"/>
+    <path d="M0 -42 L0 -28 M0 42 L0 28 M-42 0 L-28 0 M42 0 L28 0 M-30 -30 L-20 -20 M30 30 L20 20 M-30 30 L-20 20 M30 -30 L20 -20" stroke="#F59E0B" stroke-width="4" stroke-linecap="round"/>
+  </g>
+  <text x="96" y="162" text-anchor="middle" fill="#38BDF8" font-family="system-ui, sans-serif" font-size="16" font-weight="900" letter-spacing="1">SIBERMU</text>
+</svg>

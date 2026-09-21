@@ -96,19 +96,27 @@ export function FaqContactSection() {
                   className="rounded-2xl glass-card overflow-hidden border border-slate-200/80 dark:border-slate-800 transition-all duration-200"
                 >
                   <button
+                    id={`faq-question-${index}`}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full text-left p-5 flex items-center justify-between gap-4 focus:outline-none"
+                    aria-expanded={isOpen}
+                    aria-controls={`faq-answer-${index}`}
+                    className="w-full text-left p-5 flex items-center justify-between gap-4 focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:outline-none"
                   >
                     <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white">
                       {faq.question}
                     </span>
                     <span className="p-1 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-500 shrink-0">
-                      {isOpen ? <ChevronUp className="w-4 h-4" /> : <ChevronDown className="w-4 h-4" />}
+                      {isOpen ? <ChevronUp className="w-4 h-4" aria-hidden="true" /> : <ChevronDown className="w-4 h-4" aria-hidden="true" />}
                     </span>
                   </button>
 
                   {isOpen && (
-                    <div className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 animate-in fade-in">
+                    <div
+                      id={`faq-answer-${index}`}
+                      role="region"
+                      aria-labelledby={`faq-question-${index}`}
+                      className="px-5 pb-5 pt-1 text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed border-t border-slate-100 dark:border-slate-800/60 animate-in fade-in"
+                    >
                       {faq.answer}
                     </div>
                   )}
@@ -120,7 +128,7 @@ export function FaqContactSection() {
           {/* Quick Contact Form */}
           <div className="lg:col-span-5 rounded-3xl glass-card p-6 sm:p-8 border border-teal-500/25 shadow-xl">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-teal-500" />
+              <MessageCircle className="w-5 h-5 text-teal-500" aria-hidden="true" />
               <span>Ada Pertanyaan Spesifik?</span>
             </h3>
             <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-5">
@@ -129,7 +137,7 @@ export function FaqContactSection() {
 
             {formSubmitted ? (
               <div className="p-6 text-center rounded-2xl bg-teal-500/10 border border-teal-500/30">
-                <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto mb-2" />
+                <CheckCircle2 className="w-10 h-10 text-emerald-500 mx-auto mb-2" aria-hidden="true" />
                 <h4 className="text-sm font-bold text-slate-900 dark:text-white">
                   Pesan Berhasil Terkirim!
                 </h4>
@@ -140,10 +148,11 @@ export function FaqContactSection() {
             ) : (
               <form onSubmit={handleFormSubmit} className="space-y-3.5 text-xs">
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="contact-name" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Nama Lengkap / NIM:
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     value={name}
@@ -154,10 +163,11 @@ export function FaqContactSection() {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="contact-email" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Alamat Email Aktif:
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     required
                     value={email}
@@ -168,13 +178,14 @@ export function FaqContactSection() {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="contact-category" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Topik Pertanyaan:
                   </label>
                   <select
+                    id="contact-category"
                     value={category}
                     onChange={(e) => setCategory(e.target.value)}
-                    className="w-full px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500"
+                    className="w-full px-3 py-2 rounded-xl bg-slate-100 dark:bg-slate-800 text-slate-900 dark:text-white border border-slate-300 dark:border-slate-700 focus:outline-none focus:ring-2 focus:ring-teal-500 cursor-pointer"
                   >
                     <option value="beasiswa">Beasiswa & Pembiayaan Kuliah</option>
                     <option value="ormawa">Pendaftaran UKM & Ormawa</option>
@@ -185,10 +196,11 @@ export function FaqContactSection() {
                 </div>
 
                 <div>
-                  <label className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
+                  <label htmlFor="contact-message" className="block font-semibold text-slate-700 dark:text-slate-300 mb-1">
                     Pesan / Pertanyaan:
                   </label>
                   <textarea
+                    id="contact-message"
                     rows={3}
                     required
                     value={message}
@@ -200,9 +212,9 @@ export function FaqContactSection() {
 
                 <button
                   type="submit"
-                  className="w-full py-2.5 rounded-xl font-bold text-white bg-teal-600 hover:bg-teal-500 shadow-md shadow-teal-600/20 flex items-center justify-center gap-1.5 transition-all"
+                  className="w-full py-2.5 rounded-xl font-bold text-white bg-teal-600 hover:bg-teal-500 shadow-md shadow-teal-600/20 flex items-center justify-center gap-1.5 transition-all focus-visible:ring-2 focus-visible:ring-teal-500"
                 >
-                  <Send className="w-3.5 h-3.5" />
+                  <Send className="w-3.5 h-3.5" aria-hidden="true" />
                   <span>Kirim Pesan ke Biro</span>
                 </button>
               </form>

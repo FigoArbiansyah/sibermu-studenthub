@@ -193,7 +193,10 @@ export function QuickSearchModal({ isOpen, onClose }: QuickSearchModalProps) {
       >
         {/* Search Input Bar */}
         <div className="flex items-center px-4 py-3.5 border-b border-slate-200 dark:border-slate-800 gap-3">
-          <Search className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0" />
+          <Search className="w-5 h-5 text-teal-600 dark:text-teal-400 shrink-0" aria-hidden="true" />
+          <label htmlFor="command-palette-input" className="sr-only">
+            Cari informasi beasiswa, UKM, prestasi, kajian siber, atau layanan
+          </label>
           <input
             id="command-palette-input"
             type="text"
@@ -201,19 +204,22 @@ export function QuickSearchModal({ isOpen, onClose }: QuickSearchModalProps) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Cari beasiswa, UKM, prestasi, kajian siber, atau layanan..."
+            aria-label="Cari informasi beasiswa, UKM, prestasi, kajian siber, atau layanan"
             className="w-full bg-transparent text-slate-800 dark:text-slate-100 placeholder-slate-400 dark:placeholder-slate-500 text-sm focus:outline-none"
           />
           {query && (
             <button
               onClick={() => setQuery("")}
-              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1"
+              aria-label="Hapus kata kunci pencarian"
+              className="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200 p-1 focus-visible:ring-2 focus-visible:ring-teal-500"
             >
-              <X className="w-4 h-4" />
+              <X className="w-4 h-4" aria-hidden="true" />
             </button>
           )}
           <button
             onClick={onClose}
-            className="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200"
+            aria-label="Tutup jendela pencarian"
+            className="text-xs px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-500 hover:bg-slate-200 focus-visible:ring-2 focus-visible:ring-teal-500"
           >
             ESC
           </button>
