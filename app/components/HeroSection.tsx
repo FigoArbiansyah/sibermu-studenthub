@@ -195,9 +195,15 @@ export function HeroSection() {
               </div>
 
               {/* Floating Badge 2: Muhammadiyah Identity */}
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 p-3 rounded-2xl glass-card border border-teal-500/30 shadow-xl flex items-center gap-2.5">
-                <div className="w-8 h-8 rounded-xl bg-teal-500/15 text-teal-600 dark:text-teal-400 flex items-center justify-center font-bold">
-                  ☀️
+              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 p-2.5 sm:p-3 rounded-2xl glass-card border border-teal-500/30 shadow-xl flex items-center gap-2.5">
+                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 border border-slate-200 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
+                  <img
+                    src="/images/sibermu-emblem.png"
+                    alt="Lambang Resmi Universitas Siber Muhammadiyah"
+                    width="32"
+                    height="32"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div className="text-left">
                   <span className="text-xs font-bold text-slate-900 dark:text-white block">

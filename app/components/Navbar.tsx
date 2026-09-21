@@ -81,14 +81,20 @@ export function Navbar({
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between">
-          {/* Minimalist Brand Logo & Identity */}
+          {/* Minimalist Brand Logo & Identity with Official SiberMu Emblem */}
           <a
             href="#beranda"
             className="flex items-center gap-3 group focus:outline-none"
-            aria-label="Beranda SiberMu Kemahasiswaan dan AIK"
+            aria-label="Beranda SiberMu StudentHub - Biro Kemahasiswaan dan AIK"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-lg shadow-sm group-hover:scale-105 transition-transform duration-300">
-              <span className="text-amber-400 dark:text-amber-500 text-base">☀️</span>
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-slate-200/90 dark:border-teal-500/30 p-1 shadow-sm group-hover:scale-105 transition-transform duration-300">
+              <img
+                src="/images/sibermu-emblem.png"
+                alt="Logo Resmi Universitas Siber Muhammadiyah"
+                width="36"
+                height="36"
+                className="w-full h-full object-contain"
+              />
               <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-teal-500 border-2 border-white dark:border-[#070B19] rounded-full" />
             </div>
 
@@ -97,12 +103,12 @@ export function Navbar({
                 <span className="font-extrabold text-base tracking-tight text-slate-900 dark:text-white leading-none">
                   Siber<span className="text-teal-600 dark:text-teal-400">Mu</span>
                 </span>
-                <span className="text-[10px] font-semibold px-1.5 py-0.5 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 border border-slate-200/80 dark:border-slate-700">
-                  Biro Kemahasiswaan & AIK
+                <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-500/10 dark:bg-teal-500/20 text-teal-700 dark:text-teal-300 border border-teal-500/30">
+                  StudentHub
                 </span>
               </div>
               <span className="text-[11px] font-normal text-slate-500 dark:text-slate-400 mt-0.5">
-                Universitas Siber Muhammadiyah
+                Biro Kemahasiswaan & AIK
               </span>
             </div>
           </a>

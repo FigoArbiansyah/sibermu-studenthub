@@ -30,7 +30,8 @@ export const links: Route.LinksFunction = () => [
     type: "image/jpeg",
     fetchPriority: "high",
   },
-  { rel: "apple-touch-icon", href: "/icons/icon-192.svg" },
+  { rel: "icon", type: "image/png", href: "/images/sibermu-emblem.png" },
+  { rel: "apple-touch-icon", href: "/images/sibermu-emblem.png" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {
@@ -44,7 +45,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         "name": "Universitas Siber Muhammadiyah",
         "alternateName": "SiberMu",
         "url": "https://sibermu.ac.id",
-        "logo": "https://sibermu-studenthub.vercel.app/favicon.ico",
+        "logo": "https://sibermu-studenthub.vercel.app/images/sibermu-emblem.png",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Jl. KH. Ahmad Dahlan No. 103",

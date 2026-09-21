@@ -126,8 +126,17 @@ END:VCALENDAR`;
           </div>
 
           <div className="flex items-center gap-3 self-start md:self-auto text-xs">
-            <span className="px-3 py-1.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold border border-amber-500/20">
-              ☀️ Manhaj Tarjih & Tajdid
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold border border-amber-500/20">
+              <span className="w-4 h-4 rounded-full bg-white p-0.5 flex items-center justify-center shrink-0 shadow-2xs">
+                <img
+                  src="/images/sibermu-emblem.png"
+                  alt="SiberMu"
+                  width="16"
+                  height="16"
+                  className="w-full h-full object-contain"
+                />
+              </span>
+              Manhaj Tarjih & Tajdid
             </span>
           </div>
         </div>

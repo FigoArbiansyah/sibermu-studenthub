@@ -23,17 +23,21 @@ export function Footer() {
           {/* Brand Info */}
           <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-teal-500 to-amber-500 p-[2px] flex items-center justify-center">
-                <div className="w-full h-full bg-[#0B132B] rounded-[10px] flex items-center justify-center text-lg">
-                  ☀️
-                </div>
+              <div className="w-11 h-11 rounded-xl bg-white p-1.5 flex items-center justify-center border border-teal-500/30 shadow-md shrink-0">
+                <img
+                  src="/images/sibermu-emblem.png"
+                  alt="Logo Resmi Universitas Siber Muhammadiyah"
+                  width="44"
+                  height="44"
+                  className="w-full h-full object-contain"
+                />
               </div>
               <div>
                 <span className="font-extrabold text-base text-white tracking-tight block">
-                  BIRO KEMAHASISWAAN & AIK
+                  SIBERMU STUDENTHUB
                 </span>
                 <span className="text-[11px] text-teal-400 font-semibold tracking-wider uppercase block">
-                  Universitas Siber Muhammadiyah
+                  Biro Kemahasiswaan & AIK
                 </span>
               </div>
             </div>

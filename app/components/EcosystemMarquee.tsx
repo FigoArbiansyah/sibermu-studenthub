@@ -2,9 +2,9 @@ import React from "react";
 import { ShieldCheck, Sparkles, Globe2, Building2, Code2, HeartHandshake } from "lucide-react";
 
 export function EcosystemMarquee() {
-  const partners = [
+  const partners: Array<{ name: string; label: string; icon?: string; image?: string }> = [
     { name: "BSSN", label: "Badan Siber & Sandi Negara", icon: "🛡️" },
-    { name: "Diktilitbang", label: "Pimpinan Pusat Muhammadiyah", icon: "☀️" },
+    { name: "Diktilitbang", label: "Pimpinan Pusat Muhammadiyah", image: "/images/sibermu-emblem.png" },
     { name: "Kemendikbudristek", label: "KIP-Kuliah Siber", icon: "🎓" },
     { name: "Lazismu", label: "Filantropi & Beasiswa Kader", icon: "🤲" },
     { name: "GitHub Campus", label: "Open Source Tech Partner", icon: "💻" },
@@ -36,7 +36,13 @@ export function EcosystemMarquee() {
               key={`p1-${idx}`}
               className="flex items-center gap-3 px-4 py-2 rounded-2xl glass-card border border-slate-200/90 dark:border-slate-800/90 hover:border-teal-500/40 transition-colors shadow-xs group shrink-0"
             >
-              <span className="text-base">{p.icon}</span>
+              {p.image ? (
+                <span className="w-6 h-6 rounded-lg bg-white p-0.5 border border-slate-200 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
+                  <img src={p.image} alt={p.name} width="20" height="20" className="w-full h-full object-contain" />
+                </span>
+              ) : (
+                <span className="text-base">{p.icon}</span>
+              )}
               <div className="text-left">
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors block">
                   {p.name}
@@ -54,7 +60,13 @@ export function EcosystemMarquee() {
               key={`p2-${idx}`}
               className="flex items-center gap-3 px-4 py-2 rounded-2xl glass-card border border-slate-200/90 dark:border-slate-800/90 hover:border-teal-500/40 transition-colors shadow-xs group shrink-0"
             >
-              <span className="text-base">{p.icon}</span>
+              {p.image ? (
+                <span className="w-6 h-6 rounded-lg bg-white p-0.5 border border-slate-200 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
+                  <img src={p.image} alt={p.name} width="20" height="20" className="w-full h-full object-contain" />
+                </span>
+              ) : (
+                <span className="text-base">{p.icon}</span>
+              )}
               <div className="text-left">
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors block">
                   {p.name}
