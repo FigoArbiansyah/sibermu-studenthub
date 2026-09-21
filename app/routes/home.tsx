@@ -24,14 +24,14 @@ export function meta({}: Route.MetaArgs) {
         "Portal resmi Biro Kemahasiswaan dan AIK SiberMu: layanan beasiswa, konseling online, Ormawa & UKM virtual, dan pembinaan Islam Berkemajuan.",
     },
     { property: "og:type", content: "website" },
-    { property: "og:url", content: "https://kemahasiswaan.sibermu.ac.id/" },
+    { property: "og:url", content: "https://sibermu-studenthub.vercel.app/" },
     { property: "og:title", content: "Biro Kemahasiswaan & AIK | Universitas Siber Muhammadiyah" },
     {
       property: "og:description",
       content:
         "Portal resmi Biro Kemahasiswaan dan AIK SiberMu: layanan beasiswa, konseling online, Ormawa & UKM virtual, dan pembinaan Islam Berkemajuan.",
     },
-    { property: "og:image", content: "https://kemahasiswaan.sibermu.ac.id/images/hero-students.jpg" },
+    { property: "og:image", content: "https://sibermu-studenthub.vercel.app/images/hero-students.jpg" },
     { property: "og:locale", content: "id_ID" },
     { property: "og:site_name", content: "Universitas Siber Muhammadiyah" },
     { name: "twitter:card", content: "summary_large_image" },
@@ -40,7 +40,7 @@ export function meta({}: Route.MetaArgs) {
       name: "twitter:description",
       content: "Portal kemahasiswaan digital dan penguatan nilai Islam Berkemajuan SiberMu.",
     },
-    { name: "twitter:image", content: "https://kemahasiswaan.sibermu.ac.id/images/hero-students.jpg" },
+    { name: "twitter:image", content: "https://sibermu-studenthub.vercel.app/images/hero-students.jpg" },
   ];
 }
 

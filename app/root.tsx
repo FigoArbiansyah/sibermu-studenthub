@@ -22,7 +22,7 @@ export const links: Route.LinksFunction = () => [
     href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,300..800;1,300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap",
   },
   { rel: "manifest", href: "/manifest.webmanifest" },
-  { rel: "canonical", href: "https://kemahasiswaan.sibermu.ac.id/" },
+  { rel: "canonical", href: "https://sibermu-studenthub.vercel.app/" },
   {
     rel: "preload",
     as: "image",
@@ -40,11 +40,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
     "@graph": [
       {
         "@type": "CollegeOrUniversity",
-        "@id": "https://kemahasiswaan.sibermu.ac.id/#organization",
+        "@id": "https://sibermu-studenthub.vercel.app/#organization",
         "name": "Universitas Siber Muhammadiyah",
         "alternateName": "SiberMu",
         "url": "https://sibermu.ac.id",
-        "logo": "https://kemahasiswaan.sibermu.ac.id/favicon.ico",
+        "logo": "https://sibermu-studenthub.vercel.app/favicon.ico",
         "address": {
           "@type": "PostalAddress",
           "streetAddress": "Jl. KH. Ahmad Dahlan No. 103",
@@ -61,11 +61,11 @@ export function Layout({ children }: { children: React.ReactNode }) {
       },
       {
         "@type": "WebSite",
-        "@id": "https://kemahasiswaan.sibermu.ac.id/#website",
-        "url": "https://kemahasiswaan.sibermu.ac.id/",
+        "@id": "https://sibermu-studenthub.vercel.app/#website",
+        "url": "https://sibermu-studenthub.vercel.app/",
         "name": "Biro Kemahasiswaan & AIK SiberMu",
         "description": "Portal Layanan Kemahasiswaan Digital dan Al-Islam Kemuhammadiyahan",
-        "publisher": { "@id": "https://kemahasiswaan.sibermu.ac.id/#organization" },
+        "publisher": { "@id": "https://sibermu-studenthub.vercel.app/#organization" },
         "inLanguage": "id-ID"
       }
     ]
