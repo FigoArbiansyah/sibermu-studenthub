@@ -57,11 +57,10 @@ export function Navbar({
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled
           ? "bg-white/80 dark:bg-[#070B19]/85 backdrop-blur-xl py-3 border-b border-slate-200/70 dark:border-white/[0.08] shadow-xs"
           : "bg-transparent py-5 border-b border-transparent"
-      }`}
+        }`}
     >
       {/* Skip to Main Content Link for Screen Readers & Keyboard Navigation (WCAG 2.1 AA) */}
       <a
@@ -87,15 +86,14 @@ export function Navbar({
             className="flex items-center gap-3 group focus:outline-none"
             aria-label="Beranda SiberMu StudentHub - Biro Kemahasiswaan dan AIK"
           >
-            <div className="relative flex items-center justify-center w-10 h-10 rounded-xl bg-white border border-slate-200/90 dark:border-teal-500/30 p-1 shadow-sm group-hover:scale-105 transition-transform duration-300">
+            <div className="relative flex items-center justify-center w-10 h-10 rounded-full bg-white shadow-xs ring-1 ring-slate-200/80 dark:ring-teal-400/40 p-1 group-hover:scale-105 group-hover:ring-teal-400/60 transition-all duration-300 shrink-0">
               <img
                 src="/images/sibermu-emblem.png"
                 alt="Logo Resmi Universitas Siber Muhammadiyah"
-                width="36"
-                height="36"
+                width="40"
+                height="40"
                 className="w-full h-full object-contain"
               />
-              <div className="absolute -bottom-0.5 -right-0.5 w-3 h-3 bg-teal-500 border-2 border-white dark:border-[#070B19] rounded-full" />
             </div>
 
             <div className="flex flex-col text-left">
@@ -121,11 +119,10 @@ export function Navbar({
                 <a
                   key={item.name}
                   href={item.href}
-                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors ${
-                    isActive
+                  className={`px-3.5 py-1.5 rounded-full text-xs font-medium transition-colors ${isActive
                       ? "bg-white dark:bg-slate-800 text-slate-950 dark:text-white shadow-xs font-semibold"
                       : "text-slate-600 dark:text-slate-300 hover:text-slate-900 dark:hover:text-white hover:bg-white/50 dark:hover:bg-slate-800/50"
-                  }`}
+                    }`}
                 >
                   {item.name}
                 </a>
