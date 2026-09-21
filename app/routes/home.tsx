@@ -68,29 +68,31 @@ export default function Home() {
     setToasts((prev) => prev.filter((t) => t.id !== id));
   };
 
-  // Sync theme with html root class
+  // Sync theme with html root class and system preference
   useEffect(() => {
     const isDarkStored = localStorage.getItem("sibermu_theme");
-    if (isDarkStored === "light") {
-      setDarkMode(false);
-      document.documentElement.classList.remove("dark");
-    } else {
-      setDarkMode(true);
+    const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+    const isDark = isDarkStored ? isDarkStored === "dark" : prefersDark;
+
+    setDarkMode(isDark);
+    if (isDark) {
       document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const handleToggleTheme = () => {
-    if (darkMode) {
-      document.documentElement.classList.remove("dark");
-      localStorage.setItem("sibermu_theme", "light");
-      setDarkMode(false);
-      showToast("Mode Terang Aktif", "Tampilan beralih ke mode terang", "info");
-    } else {
+    const nextDark = !darkMode;
+    setDarkMode(nextDark);
+    if (nextDark) {
       document.documentElement.classList.add("dark");
       localStorage.setItem("sibermu_theme", "dark");
-      setDarkMode(true);
       showToast("Mode Gelap Aktif", "Tampilan beralih ke mode malam siber", "info");
+    } else {
+      document.documentElement.classList.remove("dark");
+      localStorage.setItem("sibermu_theme", "light");
+      showToast("Mode Terang Aktif", "Tampilan beralih ke mode terang", "info");
     }
   };
 
