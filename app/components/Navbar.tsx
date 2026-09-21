@@ -137,11 +137,11 @@ export function Navbar({
               id="quick-search-trigger"
               onClick={onOpenSearch}
               aria-label="Buka pencarian cepat (Ctrl + K)"
-              className="flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 transition-all hover:border-teal-500/40 hover:text-teal-600 dark:hover:text-teal-400 interactive-lift"
+              className="group flex items-center gap-2 px-3 py-1.5 text-xs font-medium rounded-full bg-slate-100 dark:bg-slate-900 hover:bg-slate-200 dark:hover:bg-slate-800 text-slate-500 dark:text-slate-400 border border-slate-200 dark:border-slate-800 transition-all hover:border-teal-500/40 hover:text-teal-600 dark:hover:text-teal-400 interactive-lift"
             >
               <Search className="w-3.5 h-3.5" />
               <span className="hidden sm:inline text-xs">Cari...</span>
-              <kbd className="hidden sm:inline-block px-1.5 py-0.2 rounded text-[10px] font-mono bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700">
+              <kbd className="hidden sm:inline-flex items-center gap-0.5 px-1.5 py-0.5 rounded-md text-[10px] leading-none font-mono font-semibold text-slate-400 dark:text-slate-500 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-700 shadow-[0_1px_0_0] shadow-slate-300 dark:shadow-slate-700 transition-colors group-hover:text-teal-500 dark:group-hover:text-teal-400">
                 ⌘K
               </kbd>
             </button>
