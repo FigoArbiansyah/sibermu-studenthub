@@ -165,21 +165,35 @@ export function HeroSection() {
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
 
-                {/* Bottom Photo Caption */}
-                <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl glass-card backdrop-blur-md border border-white/20 dark:border-white/10 text-left">
-                  <div className="flex items-center gap-2 mb-1">
-                    <span className="w-2 h-2 rounded-full bg-emerald-400 animate-ping" />
-                    <span className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-wider">
-                      Generasi Siber Berkemajuan
-                    </span>
+                {/* Bottom Photo Caption with Integrated SiberMu Academic Identity */}
+                <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-3.5 rounded-2xl glass-card backdrop-blur-md border border-white/25 dark:border-white/10 text-left flex items-center gap-3 shadow-lg">
+                  <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-1 border border-slate-200/80 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
+                    <img
+                      src="/images/sibermu-emblem.png"
+                      alt="Lambang Resmi Universitas Siber Muhammadiyah"
+                      width="36"
+                      height="36"
+                      className="w-full h-full object-contain"
+                    />
                   </div>
-                  <p className="text-[11px] text-slate-600 dark:text-slate-300 line-clamp-1">
-                    Belajar fleksibel dari mana saja, berprestasi di kancah nasional dan global.
-                  </p>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center gap-2 mb-0.5">
+                      <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                      <span className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-wider truncate">
+                        Generasi Siber Berkemajuan
+                      </span>
+                      <span className="hidden sm:inline-block text-[9px] font-semibold px-1.5 py-0.2 rounded bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
+                        SiberMu
+                      </span>
+                    </div>
+                    <p className="text-[11px] text-slate-600 dark:text-slate-300 line-clamp-1">
+                      Belajar fleksibel dari mana saja, berprestasi di kancah nasional & global.
+                    </p>
+                  </div>
                 </div>
               </div>
 
-              {/* Floating Badge 1: Trophy & Prestasi */}
+              {/* Floating Badge 1: Trophy & Prestasi (Balanced single top-left floating accent) */}
               <div className="absolute -top-4 -left-4 sm:-top-5 sm:-left-6 p-3 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-lg">
                   🏆
@@ -190,27 +204,6 @@ export function HeroSection() {
                   </span>
                   <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
                     Nasional & Global 2025/2026
-                  </span>
-                </div>
-              </div>
-
-              {/* Floating Badge 2: Muhammadiyah Identity */}
-              <div className="absolute -bottom-3 -right-3 sm:-bottom-4 sm:-right-4 p-2.5 sm:p-3 rounded-2xl glass-card border border-teal-500/30 shadow-xl flex items-center gap-2.5 interactive-lift hover:scale-105 cursor-default">
-                <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-white p-1 border border-slate-200 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
-                  <img
-                    src="/images/sibermu-emblem.png"
-                    alt="Lambang Resmi Universitas Siber Muhammadiyah"
-                    width="32"
-                    height="32"
-                    className="w-full h-full object-contain"
-                  />
-                </div>
-                <div className="text-left">
-                  <span className="text-xs font-bold text-slate-900 dark:text-white block">
-                    Islam Berkemajuan
-                  </span>
-                  <span className="text-[10px] text-teal-600 dark:text-teal-400 font-medium block">
-                    Muhammadiyah Cyber Hub
                   </span>
                 </div>
               </div>
