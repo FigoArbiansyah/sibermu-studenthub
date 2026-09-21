@@ -20,6 +20,7 @@ import {
   ShieldCheck
 } from "lucide-react";
 import { servicesData, type StudentService } from "../data/servicesData";
+import { SpotlightCard } from "./SpotlightCard";
 
 interface ServiceCenterProps {
   onShowToast?: (title: string, message: string, type?: "success" | "info" | "warning") => void;
@@ -344,9 +345,9 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
         {/* Service Cards Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredServices.map((service) => (
-            <div
+            <SpotlightCard
               key={service.id}
-              className="rounded-2xl glass-card p-6 flex flex-col justify-between hover:border-teal-500/50 hover:shadow-xl transition-all duration-300 group"
+              className="p-6 flex flex-col justify-between hover:border-teal-500/50 hover:shadow-xl transition-all duration-300 group"
             >
               <div>
                 <div className="flex items-center justify-between gap-3 mb-4">
@@ -387,7 +388,7 @@ export function ServiceCenter({ onShowToast }: ServiceCenterProps) {
                   {service.actionLabel}
                 </button>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>

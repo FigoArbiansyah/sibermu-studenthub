@@ -3,6 +3,7 @@ import type { Route } from "./+types/home";
 import { Navbar } from "../components/Navbar";
 import { QuickSearchModal } from "../components/QuickSearchModal";
 import { HeroSection } from "../components/HeroSection";
+import { EcosystemMarquee } from "../components/EcosystemMarquee";
 import { ServiceCenter } from "../components/ServiceCenter";
 import { CommunitySection } from "../components/CommunitySection";
 import { AchievementWall } from "../components/AchievementWall";
@@ -129,6 +130,9 @@ export default function Home() {
       <main className="flex-1">
         {/* 1. Hero Section (Dual Pathway & Quick Intents) */}
         <HeroSection />
+
+        {/* Framer-Style Infinite Marquee: Jejaring Ekosistem & Mitra */}
+        <EcosystemMarquee />
 
         {/* 2. Layanan Mahasiswa (Kemahasiswaan: Beasiswa, Konseling, Surat, Karir, Simulator & Ticket Tracker) */}
         <ServiceCenter onShowToast={showToast} />

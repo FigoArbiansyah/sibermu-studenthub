@@ -15,6 +15,7 @@ import {
   Quote
 } from "lucide-react";
 import { achievementsData, type StudentAchievement } from "../data/achievementsData";
+import { SpotlightCard } from "./SpotlightCard";
 
 export function AchievementWall() {
   const [tierFilter, setTierFilter] = useState<string>("all");
@@ -87,71 +88,74 @@ export function AchievementWall() {
           </button>
         </div>
 
-        {/* Featured Editorial Photo Showcase (The National Champion Moment) */}
-        <div className="mb-12 rounded-3xl overflow-hidden glass-card border border-amber-500/30 shadow-2xl grid grid-cols-1 lg:grid-cols-12">
-          <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden">
-            <img
-              src="/images/champions.jpg"
-              alt="Momen penganugerahan piala juara nasional mahasiswa SiberMu"
-              className="w-full h-full object-cover object-center"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/80 via-slate-950/20 to-transparent" />
-            <div className="absolute bottom-4 left-4 p-3 rounded-2xl glass-card backdrop-blur-md text-xs font-bold text-white flex items-center gap-2">
-              <span className="p-1 rounded-lg bg-amber-500 text-slate-950">🏆</span>
-              <span>Podium Juara 1 Nasional — Penganugerahan Resmi</span>
+        {/* Featured Editorial Photo Showcase (The National Champion Moment) with Animated Border Beam */}
+        <div className="mb-12 rounded-3xl overflow-hidden relative p-[2px] shadow-2xl border-beam-container">
+          <div className="border-beam-glow" />
+          <div className="relative z-10 w-full h-full rounded-[22px] overflow-hidden bg-white/95 dark:bg-[#090E1D]/95 grid grid-cols-1 lg:grid-cols-12">
+            <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden">
+              <img
+                src="/images/champions.jpg"
+                alt="Momen penganugerahan piala juara nasional mahasiswa SiberMu"
+                className="w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/80 via-slate-950/20 to-transparent" />
+              <div className="absolute bottom-4 left-4 p-3 rounded-2xl glass-card backdrop-blur-md text-xs font-bold text-white flex items-center gap-2">
+                <span className="p-1 rounded-lg bg-amber-500 text-slate-950">🏆</span>
+                <span>Podium Juara 1 Nasional — Penganugerahan Resmi</span>
+              </div>
             </div>
-          </div>
 
-          <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
-            <div>
-              <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30">
-                  Sorotan Prestasi Utama 2025
+            <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
+              <div>
+                <div className="flex items-center gap-2 mb-2">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                    Sorotan Prestasi Utama 2025
+                  </span>
+                  <span className="text-xs text-slate-400">• Tingkat Nasional</span>
+                </div>
+
+                <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug">
+                  Juara 1 National Cyber Defense & Incident Response Challenge
+                </h3>
+                <p className="mt-1 text-xs font-bold text-teal-600 dark:text-teal-400">
+                  Ajang Resmi BSSN National Cyber Security Summit 2025
+                </p>
+
+                <blockquote className="mt-4 p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/70 border-l-4 border-amber-500 text-xs text-slate-700 dark:text-slate-300 italic leading-relaxed">
+                  "Kuliah siber memberikan fleksibilitas luar biasa untuk berlatih simulasi forensik digital dan keamanan jaringan kapan pun, membuktikan mahasiswa online mampu unggul di panggung nasional."
+                </blockquote>
+
+                <div className="mt-4 flex items-center gap-3">
+                  <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-teal-500 to-amber-500 flex items-center justify-center font-bold text-xs text-white">
+                    FR
+                  </div>
+                  <div>
+                    <span className="text-xs font-bold text-slate-900 dark:text-white block">
+                      Fajar Rizki Pratama & Tim SiberShield
+                    </span>
+                    <span className="text-[11px] text-slate-500 dark:text-slate-400 block">
+                      Program Studi S1 Informatika SiberMu
+                    </span>
+                  </div>
+                </div>
+              </div>
+
+              <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
+                <span className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                  <CheckCircle2 className="w-4 h-4" />
+                  <span>Terverifikasi SKPI & Rektor</span>
                 </span>
-                <span className="text-xs text-slate-400">• Tingkat Nasional</span>
+                <button
+                  onClick={() =>
+                    setSelectedAchievement(
+                      achievementsData.find((a) => a.id === "ach-1") || achievementsData[0]
+                    )
+                  }
+                  className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-sm"
+                >
+                  Lihat Lembar Penghargaan
+                </button>
               </div>
-
-              <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug">
-                Juara 1 National Cyber Defense & Incident Response Challenge
-              </h3>
-              <p className="mt-1 text-xs font-bold text-teal-600 dark:text-teal-400">
-                Ajang Resmi BSSN National Cyber Security Summit 2025
-              </p>
-
-              <blockquote className="mt-4 p-3.5 rounded-xl bg-slate-100 dark:bg-slate-900/70 border-l-4 border-amber-500 text-xs text-slate-700 dark:text-slate-300 italic leading-relaxed">
-                "Kuliah siber memberikan fleksibilitas luar biasa untuk berlatih simulasi forensik digital dan keamanan jaringan kapan pun, membuktikan mahasiswa online mampu unggul di panggung nasional."
-              </blockquote>
-
-              <div className="mt-4 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-full bg-gradient-to-tr from-teal-500 to-amber-500 flex items-center justify-center font-bold text-xs text-white">
-                  FR
-                </div>
-                <div>
-                  <span className="text-xs font-bold text-slate-900 dark:text-white block">
-                    Fajar Rizki Pratama & Tim SiberShield
-                  </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400 block">
-                    Program Studi S1 Informatika SiberMu
-                  </span>
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-              <span className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>Terverifikasi SKPI & Rektor</span>
-              </span>
-              <button
-                onClick={() =>
-                  setSelectedAchievement(
-                    achievementsData.find((a) => a.id === "ach-1") || achievementsData[0]
-                  )
-                }
-                className="px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-sm"
-              >
-                Lihat Lembar Penghargaan
-              </button>
             </div>
           </div>
         </div>
@@ -191,12 +195,12 @@ export function AchievementWall() {
           </div>
         </div>
 
-        {/* Achievement Cards Grid */}
+        {/* Achievement Cards Grid using Framer-Style SpotlightCard */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {filteredAchievements.map((item) => (
-            <div
+            <SpotlightCard
               key={item.id}
-              className="rounded-2xl glass-card p-6 flex flex-col justify-between hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 group cursor-pointer"
+              className="p-6 flex flex-col justify-between hover:border-amber-500/50 hover:shadow-xl transition-all duration-300 group cursor-pointer"
               onClick={() => setSelectedAchievement(item)}
             >
               <div>
@@ -240,7 +244,7 @@ export function AchievementWall() {
                   Detail →
                 </span>
               </div>
-            </div>
+            </SpotlightCard>
           ))}
         </div>
       </div>
