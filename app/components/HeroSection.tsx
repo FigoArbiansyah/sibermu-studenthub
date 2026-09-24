@@ -10,7 +10,9 @@ import {
   Globe,
   Radio,
   ChevronDown,
-  CheckCircle2
+  CheckCircle2,
+  Trophy,
+  ArrowUpRight
 } from "lucide-react";
 
 export function HeroSection() {
@@ -193,20 +195,35 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating Badge 1: Trophy & Prestasi */}
-              <div className="absolute -top-3 left-2 sm:-top-5 sm:-left-5 p-2.5 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-2.5 sm:gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
-                <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-lg">
-                  🏆
+              {/* Interactive Floating Badge: Trophy & Prestasi */}
+              <a
+                href="#prestasi"
+                aria-label="120+ Prestasi Mahasiswa Nasional & Global 2025/2026 - Lihat Hall of Champions"
+                className="absolute -top-3.5 left-2 sm:-top-5 sm:-left-4 lg:-top-5 lg:-left-5 p-2 sm:p-2.5 md:p-3 rounded-2xl bg-white/95 dark:bg-slate-900/90 backdrop-blur-xl border border-amber-500/35 dark:border-amber-400/25 shadow-xl shadow-amber-950/10 dark:shadow-black/50 flex items-center gap-2.5 sm:gap-3 transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-amber-500/20 hover:border-amber-500/70 dark:hover:border-amber-400/60 active:scale-98 group/badge z-20 max-w-[calc(100%-1rem)] sm:max-w-none focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-amber-500 focus-visible:ring-offset-2 dark:focus-visible:ring-offset-slate-900"
+              >
+                {/* Glowing Trophy Squircle */}
+                <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-amber-400 via-amber-500 to-amber-600 text-white flex items-center justify-center shadow-md shadow-amber-500/30 shrink-0 group-hover/badge:scale-105 group-hover/badge:rotate-3 transition-transform duration-300">
+                  <Trophy className="w-4 h-4 sm:w-5 sm:h-5 text-white stroke-[2.2]" aria-hidden="true" />
                 </div>
-                <div className="text-left">
-                  <span className="text-xs font-black text-slate-900 dark:text-white block">
-                    120+ Prestasi
-                  </span>
-                  <span className="text-[10px] text-slate-600 dark:text-slate-400 font-medium block">
-                    Nasional & Global 2025/2026
-                  </span>
+
+                {/* Text & Metadata */}
+                <div className="text-left min-w-0 pr-0.5">
+                  <div className="flex items-center gap-1.5 mb-0.5">
+                    <span className="text-xs sm:text-sm font-black text-slate-900 dark:text-white block tracking-tight truncate leading-none">
+                      120+ Prestasi
+                    </span>
+                    <span className="hidden xs:inline-flex items-center text-[9px] font-bold px-1.5 py-0.5 rounded-full bg-amber-500/10 dark:bg-amber-400/15 text-amber-700 dark:text-amber-300 border border-amber-500/20 leading-none">
+                      2025/2026
+                    </span>
+                    <ArrowUpRight className="w-3.5 h-3.5 text-amber-600 dark:text-amber-400 opacity-60 group-hover/badge:opacity-100 group-hover/badge:translate-x-0.5 group-hover/badge:-translate-y-0.5 transition-all shrink-0 ml-auto" aria-hidden="true" />
+                  </div>
+                  <div className="flex items-center gap-1.5 text-[10px] sm:text-[11px] text-slate-600 dark:text-slate-300 font-medium">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" aria-hidden="true" />
+                    <span className="truncate">Nasional & Global</span>
+                    <span className="xs:hidden text-[9px] text-amber-600 dark:text-amber-400 font-semibold">• '25/'26</span>
+                  </div>
                 </div>
-              </div>
+              </a>
             </div>
           </div>
         </div>
