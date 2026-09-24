@@ -232,51 +232,51 @@ export function HeroSection() {
         </div>
 
         {/* Realistic Institutional Metrics Strip */}
-        <div className="mt-16 pt-8 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4">
-          <div className="p-3 text-left">
-            <span className="text-xs font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider block mb-1">
+        <div className="mt-12 sm:mt-16 pt-6 sm:pt-8 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+          <div className="p-1 sm:p-3 text-left">
+            <span className="text-[11px] sm:text-xs font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider block mb-1 truncate">
               01 / SISTEM PERKULIAHAN
             </span>
-            <div className="text-2xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
               100% PJJ Siber
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-snug">
               LMS terpadu & tele-presence modern
             </p>
           </div>
 
-          <div className="p-3 text-left">
-            <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider block mb-1">
+          <div className="p-1 sm:p-3 text-left">
+            <span className="text-[11px] sm:text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider block mb-1 truncate">
               02 / KOMUNITAS BAKAT
             </span>
-            <div className="text-2xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
               15+ Ormawa & UKM
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-snug">
               Koding, E-Sport, IMM, HW & Debat
             </p>
           </div>
 
-          <div className="p-3 text-left">
-            <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block mb-1">
+          <div className="p-1 sm:p-3 text-left">
+            <span className="text-[11px] sm:text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block mb-1 truncate">
               03 / LAYANAN MAHASISWA
             </span>
-            <div className="text-2xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
               1x24 Jam SLA
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-snug">
               Beasiswa, e-surat & konseling psikolog
             </p>
           </div>
 
-          <div className="p-3 text-left">
-            <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1">
+          <div className="p-1 sm:p-3 text-left">
+            <span className="text-[11px] sm:text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1 truncate">
               04 / SYIAR KEAGAMAAN
             </span>
-            <div className="text-2xl font-black text-slate-900 dark:text-white">
+            <div className="text-xl sm:text-2xl font-black text-slate-900 dark:text-white leading-tight">
               Dwi-Pekanan
             </div>
-            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
+            <p className="text-[11px] sm:text-xs text-slate-600 dark:text-slate-400 mt-0.5 leading-snug">
               Kajian virtual & podcast inspiratif
             </p>
           </div>

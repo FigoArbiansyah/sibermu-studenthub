@@ -26,12 +26,12 @@ export function AikHubSection({ onShowToast }: AikHubSectionProps) {
   const [activePillar, setActivePillar] = useState<string>("tauhid");
   const [reminderSetId, setReminderSetId] = useState<string | null>(null);
 
-  // Live countdown state for the upcoming session
+  // Live countdown state for the upcoming session (45 hari)
   const [timeLeft, setTimeLeft] = useState({
-    days: 6,
-    hours: 21,
-    minutes: 45,
-    seconds: 10,
+    days: 45,
+    hours: 20,
+    minutes: 44,
+    seconds: 20,
   });
 
   useEffect(() => {
@@ -202,7 +202,7 @@ END:VCALENDAR`;
             </div>
 
             {/* Right Photo Column: Real Academic Islamic Seminar */}
-            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-auto overflow-hidden bg-slate-900">
+            <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-auto min-h-[260px] overflow-hidden bg-slate-900 group">
               <img
                 src="/images/aik-seminar.webp"
                 alt="Seminar Akademik Islam Kontemporer dan Kajian Tarjih di Universitas Siber Muhammadiyah"
@@ -210,17 +210,28 @@ END:VCALENDAR`;
                 height="533"
                 loading="lazy"
                 decoding="async"
-                className="w-full h-full object-cover object-center"
+                className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/25 to-transparent pointer-events-none" />
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/90 via-slate-950/30 to-transparent pointer-events-none" />
 
-              <div className="absolute bottom-4 left-4 right-4 p-3.5 rounded-2xl glass-card backdrop-blur-md border border-white/20 text-left">
-                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">
-                  Kuliah Umum & Halaqah Tarjih Siber
-                </span>
-                <p className="text-xs font-semibold text-white mt-0.5 line-clamp-1">
+              <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3.5 sm:p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/20 text-left shadow-xl">
+                <div className="flex items-center gap-2 mb-1">
+                  <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse shrink-0" aria-hidden="true" />
+                  <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-400 truncate">
+                    Kuliah Umum & Halaqah Tarjih Siber
+                  </span>
+                </div>
+                <p className="text-xs sm:text-sm font-bold text-white leading-snug line-clamp-2">
                   "Menjawab Tantangan Etika AI & Fiqih Informasi di Era Digital"
                 </p>
+                <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10 text-[10px] sm:text-[11px] text-slate-300">
+                  <span className="inline-flex items-center gap-1 font-medium">
+                    <BookOpen className="w-3 h-3 text-emerald-400 shrink-0" aria-hidden="true" />
+                    <span>Majelis Tarjih & AIK SiberMu</span>
+                  </span>
+                  <span className="text-slate-500">•</span>
+                  <span className="text-amber-300 font-semibold">Forum Akademik Virtual</span>
+                </div>
               </div>
             </div>
           </div>

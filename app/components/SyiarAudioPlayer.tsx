@@ -168,18 +168,32 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
           <div className="absolute inset-0 bg-gradient-to-t lg:bg-gradient-to-r from-slate-950/85 via-slate-950/30 to-transparent pointer-events-none" />
 
           {/* On-Air Live Indicator */}
-          <div className="absolute top-4 left-4 inline-flex items-center gap-2 px-3 py-1 rounded-full bg-rose-600/90 text-white text-xs font-bold shadow-md">
-            <span className={`w-2 h-2 rounded-full bg-white ${isPlaying ? "animate-ping" : ""}`} />
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 inline-flex items-center gap-2 px-2.5 py-1 sm:px-3 sm:py-1 rounded-full bg-rose-600/90 backdrop-blur-xs text-white text-[11px] sm:text-xs font-bold shadow-md">
+            <span className="relative flex h-2 w-2 shrink-0" aria-hidden="true">
+              <span className={`animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75 ${isPlaying ? "" : "hidden"}`} />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-white" />
+            </span>
             <span>{isPlaying ? "ON AIR • MEMUTAR AUDIO" : "STUDIO PODCAST SIBER"}</span>
           </div>
 
-          <div className="absolute bottom-4 left-4 right-4 p-3 rounded-2xl glass-card backdrop-blur-md text-left">
-            <span className="text-[10px] font-bold uppercase tracking-wider text-amber-400 block">
-              Suara Kemahasiswaan & AIK
-            </span>
-            <p className="text-xs text-white font-medium line-clamp-1 mt-0.5">
+          <div className="absolute bottom-3 left-3 right-3 sm:bottom-4 sm:left-4 sm:right-4 p-3.5 sm:p-4 rounded-2xl bg-slate-950/80 backdrop-blur-md border border-white/20 text-left shadow-xl">
+            <div className="flex items-center gap-1.5 mb-1">
+              <Mic2 className="w-3.5 h-3.5 text-amber-400 shrink-0" aria-hidden="true" />
+              <span className="text-[10px] sm:text-[11px] font-bold uppercase tracking-wider text-amber-400 truncate">
+                Suara Kemahasiswaan & AIK
+              </span>
+            </div>
+            <p className="text-xs sm:text-[13px] text-white font-semibold leading-snug line-clamp-2">
               Dipandu oleh aktivis dan kader mahasiswa SiberMu
             </p>
+            <div className="flex items-center gap-2 mt-2 pt-2 border-t border-white/10 text-[10px] sm:text-[11px] text-slate-300">
+              <span className="inline-flex items-center gap-1 font-medium">
+                <Radio className="w-3 h-3 text-teal-400 shrink-0" aria-hidden="true" />
+                <span>Podcast & Kajian Tematik</span>
+              </span>
+              <span className="text-slate-500">•</span>
+              <span className="text-emerald-400 font-semibold">Produksi Resmi SiberMu</span>
+            </div>
           </div>
         </div>
 
