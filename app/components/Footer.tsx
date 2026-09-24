@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router";
 import {
   Compass,
   Mail,
@@ -8,7 +9,8 @@ import {
   ArrowUp,
   Heart,
   Globe,
-  ShieldCheck
+  ShieldCheck,
+  FileBadge
 } from "lucide-react";
 
 export function Footer() {
@@ -46,7 +48,7 @@ export function Footer() {
               Perguruan tinggi siber pertama milik Persyarikatan Muhammadiyah yang menyelenggarakan pendidikan tinggi jarak jauh berbasis teknologi informasi mutakhir berlandaskan nilai Islam Berkemajuan.
             </p>
 
-            <div className="pt-2 flex items-center gap-3 text-xs text-slate-400">
+            <div className="pt-2 flex flex-wrap items-center gap-2 text-xs text-slate-400">
               <div className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-slate-900 border border-slate-800 text-teal-400">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 <span>Terakreditasi BAN-PT</span>
@@ -55,6 +57,13 @@ export function Footer() {
                 <Globe className="w-3.5 h-3.5" />
                 <span>Cyber Campus Hub</span>
               </div>
+              <Link
+                to="/kredit"
+                className="flex items-center gap-1.5 px-3 py-1 rounded-full bg-teal-500/10 hover:bg-teal-500/20 border border-teal-500/30 text-teal-400 transition-colors"
+              >
+                <FileBadge className="w-3.5 h-3.5" />
+                <span>Kredit & Atribusi Media</span>
+              </Link>
             </div>
           </div>
 
@@ -146,14 +155,27 @@ export function Footer() {
                 <Phone className="w-4 h-4 text-teal-400 shrink-0" />
                 <span>+62 (274) 555-SIBER (24/7 Bot)</span>
               </li>
+              <li className="pt-2">
+                <Link
+                  to="/kredit"
+                  className="inline-flex items-center gap-1.5 text-xs text-teal-400 hover:text-teal-300 font-medium transition-colors"
+                >
+                  <FileBadge className="w-3.5 h-3.5" />
+                  <span>Lihat Halaman Kredit & Lisensi</span>
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
 
         {/* Bottom Credits & Back to Top */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
-          <div className="flex items-center gap-1 text-center sm:text-left">
-            <span>© 2026 Biro Kemahasiswaan dan AIK — Universitas Siber Muhammadiyah. Dirancang untuk keunggulan siber.</span>
+          <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
+            <span>© 2026 Biro Kemahasiswaan dan AIK — Universitas Siber Muhammadiyah.</span>
+            <span className="hidden sm:inline">•</span>
+            <Link to="/kredit" className="text-teal-400 hover:text-teal-300 hover:underline">
+              Kredit & Atribusi Media
+            </Link>
           </div>
 
           <button
@@ -169,3 +191,4 @@ export function Footer() {
     </footer>
   );
 }
+

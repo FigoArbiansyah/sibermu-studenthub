@@ -166,6 +166,24 @@ export function QuickSearchModal({ isOpen, onClose }: QuickSearchModalProps) {
       });
     }
 
+    // 5. Kredit & Atribusi Lisensi
+    if (
+      "kredit atribusi lisensi ai gambar font ikon typography sumber media open source".includes(q) ||
+      q.includes("kredit") ||
+      q.includes("atribusi") ||
+      q.includes("lisensi") ||
+      q.includes("sumber")
+    ) {
+      results.push({
+        id: "credit-page-link",
+        title: "Kredit & Atribusi Aset Media",
+        subtitle: "Daftar sumber daya gambar AI, font Google, ikon Lucide, dan lisensi open-source.",
+        category: "layanan",
+        badge: "Transparansi Lisensi",
+        targetSection: "/kredit",
+      });
+    }
+
     return results;
   }, [query, activeFilter]);
 
@@ -173,6 +191,10 @@ export function QuickSearchModal({ isOpen, onClose }: QuickSearchModalProps) {
 
   const handleSelectResult = (targetSection: string) => {
     onClose();
+    if (targetSection.startsWith("/")) {
+      window.location.href = targetSection;
+      return;
+    }
     const el = document.querySelector(targetSection);
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
