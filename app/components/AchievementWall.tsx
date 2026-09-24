@@ -89,7 +89,7 @@ export function AchievementWall() {
         </div>
 
         {/* Featured Editorial Photo Showcase (The National Champion Moment) with Animated Border Beam */}
-        <div className="mb-12 rounded-3xl overflow-hidden relative p-[2px] shadow-2xl border-beam-container">
+        <div className="mb-12 rounded-3xl overflow-hidden relative p-[2px] shadow-2xl border-beam-container bg-slate-200/90 dark:bg-white/[0.08]">
           <div className="border-beam-glow" />
           <div className="relative z-10 w-full h-full rounded-[22px] overflow-hidden bg-white/95 dark:bg-[#090E1D]/95 grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden">
