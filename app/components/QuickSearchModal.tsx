@@ -342,7 +342,10 @@ export function QuickSearchModal({ isOpen, onClose }: QuickSearchModalProps) {
               <CornerDownLeft className="w-3 h-3" /> Pilih
             </span>
           </div>
-          <span>Biro Kemahasiswaan & AIK • Universitas Siber Muhammadiyah</span>
+          <span className="truncate">
+            <span className="hidden sm:inline">Biro Kemahasiswaan & AIK • Universitas Siber Muhammadiyah</span>
+            <span className="sm:hidden font-medium">Biro Kemahasiswaan & AIK</span>
+          </span>
         </div>
       </div>
     </div>

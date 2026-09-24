@@ -59,15 +59,18 @@ export function HeroSection() {
           {/* Left Column: Core Narrative & Actions */}
           <div className="lg:col-span-7 text-left space-y-6">
             {/* Editorial Category Tracker */}
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-teal-500/30 text-teal-800 dark:text-teal-300 text-xs font-semibold shadow-xs">
-              <span className="flex h-2 w-2 relative">
-                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75"></span>
-                <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500"></span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-3.5 py-1.5 rounded-full bg-teal-500/10 dark:bg-teal-950/40 border border-teal-500/30 dark:border-teal-500/20 backdrop-blur-md text-[11px] sm:text-xs font-semibold shadow-xs max-w-full">
+              <span className="flex h-2 w-2 relative shrink-0" aria-hidden="true">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-teal-400 opacity-75" />
+                <span className="relative inline-flex rounded-full h-2 w-2 bg-teal-500" />
               </span>
-              <span>Biro Kemahasiswaan & AIK</span>
-              <span className="text-slate-400">•</span>
-              <span className="font-medium text-slate-600 dark:text-slate-300">
-                Universitas Siber Muhammadiyah
+              <span className="text-teal-900 dark:text-teal-200 font-bold whitespace-nowrap">
+                Biro Kemahasiswaan & AIK
+              </span>
+              <span className="text-slate-400 dark:text-slate-500" aria-hidden="true">•</span>
+              <span className="font-medium text-slate-600 dark:text-slate-300 truncate">
+                <span className="hidden sm:inline">Universitas Siber Muhammadiyah</span>
+                <span className="sm:hidden">SiberMu</span>
               </span>
             </div>
 
