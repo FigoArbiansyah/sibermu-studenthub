@@ -145,12 +145,24 @@ Landing page ini dirancang dengan memperhatikan standar kualitas web tertinggi:
 | **Informasi Kemahasiswaan Lengkap** | Mencakup layanan beasiswa, konseling, e-surat, organisasi mahasiswa (BEM/DPM/IMM/HW), UKM, dan *Hall of Fame* prestasi. | ✅ **100% Terpenuhi** |
 | **Informasi AIK Mendalam** | Memuat 4 pilar nilai, jadwal kajian sinkronisasi kalender, web podcast player, dan hikmah K.H. Ahmad Dahlan. | ✅ **100% Terpenuhi** |
 | **Inovasi & Interaktivitas** | Simulator beasiswa, pengecekan tiket, pemutar podcast audio, pencarian instan `Ctrl+K`, dan mode tema gelap/terang. | ✅ **100% Terpenuhi** |
+| **Kredit & Atribusi Aset Media** | Halaman dedicated `/kredit` dan rincian lisensi gambar AI, font OFL, ikon ISC, serta audio synthesizer. | ✅ **100% Terpenuhi** |
 | **Kesiapan Akses & Deployment** | Tersedia di live URL Vercel dan repositori GitHub yang dapat diakses publik tanpa hambatan izin. | ✅ **100% Terpenuhi** |
 
 ---
 
-### 3. Kesimpulan Penutup
+### 3. Kredit & Atribusi Aset Media (Asset Attribution & Transparency)
+Untuk memenuhi ketentuan orisinalitas dan etika digital, seluruh sumber daya media dicantumkan secara transparan pada halaman dedicated [`/kredit`](https://sibermu-studenthub.vercel.app/kredit):
+
+1. **Gambar & Ilustrasi AI-Generated:** Dibuat menggunakan Generative AI (Google Imagen & Midjourney Architecture) dengan *prompt engineering* kustom bertema *cyber campus* dan pendidikan Islam Berkemajuan. Aset logo resmi berlisensi milik institusi Universitas Siber Muhammadiyah.
+2. **Tipografi & Huruf:** Font *Plus Jakarta Sans* (karya Tokotype) dan *Inter* (karya Rasmus Andersson) di bawah lisensi *SIL Open Font License (OFL)* melalui Google Fonts.
+3. **Ikonografi:** *Lucide Icons* di bawah lisensi *open-source* ISC License.
+4. **Audio & Multimedia:** Sintesis audio digital mandiri berbasis standar *W3C Web Audio API* dan mutiara hikmah dari khazanah pemikiran K.H. Ahmad Dahlan.
+
+---
+
+### 4. Kesimpulan Penutup
 **SiberMu StudentHub** bukan sekadar landing page statis, melainkan representasi wajah digital masa depan dari **Biro Kemahasiswaan & AIK Universitas Siber Muhammadiyah**. Melalui perpaduan desain modern kelas dunia, teknologi performa tinggi, kemudahan layanan digital, serta penguatan karakter Islami, karya ini siap menjadi media sentral yang memberdayakan mahasiswa SiberMu menjadi generasi yang **Berdaya, Berprestasi, dan Beradab Mulia**.
 
 ---
 *Dokumen ini disusun sebagai lampiran resmi Lomba Pembuatan Landing Page SiberMu 2026.*
+
