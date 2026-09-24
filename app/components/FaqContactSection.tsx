@@ -132,10 +132,10 @@ export function FaqContactSection() {
           {/* Quick Contact Form */}
           <div className="lg:col-span-5 rounded-3xl glass-card p-6 sm:p-8 border border-teal-500/25 shadow-xl">
             <h3 className="text-lg font-bold text-slate-900 dark:text-white flex items-center gap-2">
-              <MessageCircle className="w-5 h-5 text-teal-500" aria-hidden="true" />
+              <MessageCircle className="w-5 h-5 text-teal-600 dark:text-teal-400" aria-hidden="true" />
               <span>Ada Pertanyaan Spesifik?</span>
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1 mb-5">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-1 mb-5">
               Kirimkan pertanyaan Anda langsung ke tim piket Biro Kemahasiswaan & AIK SiberMu.
             </p>
 

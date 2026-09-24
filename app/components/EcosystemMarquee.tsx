@@ -4,7 +4,7 @@ import { ShieldCheck, Sparkles, Globe2, Building2, Code2, HeartHandshake } from 
 export function EcosystemMarquee() {
   const partners: Array<{ name: string; label: string; icon?: string; image?: string }> = [
     { name: "BSSN", label: "Badan Siber & Sandi Negara", icon: "🛡️" },
-    { name: "Diktilitbang", label: "Pimpinan Pusat Muhammadiyah", image: "/images/sibermu-emblem.png" },
+    { name: "Diktilitbang", label: "Pimpinan Pusat Muhammadiyah", image: "/images/sibermu-emblem.webp" },
     { name: "Kemendikbudristek", label: "KIP-Kuliah Siber", icon: "🎓" },
     { name: "Lazismu", label: "Filantropi & Beasiswa Kader", icon: "🤲" },
     { name: "GitHub Campus", label: "Open Source Tech Partner", icon: "💻" },
@@ -21,7 +21,7 @@ export function EcosystemMarquee() {
       <div className="absolute right-0 top-0 bottom-0 w-16 sm:w-28 bg-gradient-to-l from-slate-50 dark:from-[#070B19] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
-        <div className="flex items-center justify-center gap-2 text-center text-xs font-bold text-slate-400 dark:text-slate-500 uppercase tracking-widest">
+        <div className="flex items-center justify-center gap-2 text-center text-xs font-bold text-slate-600 dark:text-slate-400 uppercase tracking-widest">
           <Sparkles className="w-3.5 h-3.5 text-amber-500" />
           <span>Jejaring Kolaborasi Industri, Persyarikatan & Ekosistem Siber</span>
         </div>
@@ -47,7 +47,7 @@ export function EcosystemMarquee() {
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors block">
                   {p.name}
                 </span>
-                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 font-medium block">
                   {p.label}
                 </span>
               </div>
@@ -71,7 +71,7 @@ export function EcosystemMarquee() {
                 <span className="text-xs font-bold text-slate-800 dark:text-slate-200 group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors block">
                   {p.name}
                 </span>
-                <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                <span className="text-[10px] text-slate-600 dark:text-slate-400 font-medium block">
                   {p.label}
                 </span>
               </div>

@@ -94,7 +94,7 @@ export function AchievementWall() {
           <div className="relative z-10 w-full h-full rounded-[22px] overflow-hidden bg-white/95 dark:bg-[#090E1D]/95 grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 relative h-72 sm:h-96 lg:h-auto overflow-hidden">
               <img
-                src="/images/champions.jpg"
+                src="/images/champions.webp"
                 alt="Momen penganugerahan piala juara nasional mahasiswa SiberMu"
                 width="800"
                 height="533"
@@ -112,16 +112,16 @@ export function AchievementWall() {
             <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
               <div>
                 <div className="flex items-center gap-2 mb-2">
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">
                     Sorotan Prestasi Utama 2025
                   </span>
-                  <span className="text-xs text-slate-400">• Tingkat Nasional</span>
+                  <span className="text-xs text-slate-600 dark:text-slate-400">• Tingkat Nasional</span>
                 </div>
 
                 <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white leading-snug">
                   Juara 1 National Cyber Defense & Incident Response Challenge
                 </h3>
-                <p className="mt-1 text-xs font-bold text-teal-600 dark:text-teal-400">
+                <p className="mt-1 text-xs font-bold text-teal-700 dark:text-teal-400">
                   Ajang Resmi BSSN National Cyber Security Summit 2025
                 </p>
 
@@ -137,7 +137,7 @@ export function AchievementWall() {
                     <span className="text-xs font-bold text-slate-900 dark:text-white block">
                       Fajar Rizki Pratama & Tim SiberShield
                     </span>
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400 block">
+                    <span className="text-[11px] text-slate-600 dark:text-slate-400 block">
                       Program Studi S1 Informatika SiberMu
                     </span>
                   </div>
@@ -145,7 +145,7 @@ export function AchievementWall() {
               </div>
 
               <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-                <span className="text-xs text-emerald-600 dark:text-emerald-400 font-semibold flex items-center gap-1">
+                <span className="text-xs text-emerald-700 dark:text-emerald-400 font-semibold flex items-center gap-1">
                   <CheckCircle2 className="w-4 h-4" />
                   <span>Terverifikasi SKPI & Rektor</span>
                 </span>
@@ -178,8 +178,8 @@ export function AchievementWall() {
                 onClick={() => setTierFilter(t.key)}
                 className={`px-3 py-1.5 rounded-lg transition-all ${
                   tierFilter === t.key
-                    ? "bg-white dark:bg-slate-800 text-teal-600 dark:text-teal-400 shadow-xs"
-                    : "text-slate-600 dark:text-slate-400 hover:text-slate-900"
+                    ? "bg-white dark:bg-slate-800 text-teal-700 dark:text-teal-400 shadow-xs font-bold"
+                    : "text-slate-700 dark:text-slate-400 hover:text-slate-900"
                 }`}
               >
                 {t.label}
@@ -188,7 +188,7 @@ export function AchievementWall() {
           </div>
 
           <div className="relative w-full sm:w-72">
-            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+            <Search className="w-4 h-4 text-slate-500 dark:text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
@@ -213,10 +213,10 @@ export function AchievementWall() {
                     {getIcon(item.iconName)}
                   </div>
                   <div className="flex items-center gap-2">
-                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                    <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full uppercase tracking-wider bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/20">
                       {item.rank}
                     </span>
-                    <span className="text-[10px] text-slate-400 font-medium flex items-center gap-1">
+                    <span className="text-[10px] text-slate-600 dark:text-slate-400 font-medium flex items-center gap-1">
                       <Calendar className="w-3 h-3" />
                       {item.year}
                     </span>
@@ -226,7 +226,7 @@ export function AchievementWall() {
                 <h3 className="text-sm font-bold text-slate-900 dark:text-white group-hover:text-amber-600 dark:group-hover:text-amber-400 transition-colors line-clamp-2">
                   {item.title}
                 </h3>
-                <p className="mt-1 text-xs text-teal-600 dark:text-teal-400 font-medium">
+                <p className="mt-1 text-xs text-teal-700 dark:text-teal-400 font-medium">
                   {item.event}
                 </p>
 
@@ -240,11 +240,11 @@ export function AchievementWall() {
                   <span className="font-semibold text-slate-800 dark:text-slate-200 block text-xs">
                     {item.studentName}
                   </span>
-                  <span className="text-[11px] text-slate-500 dark:text-slate-400">
+                  <span className="text-[11px] text-slate-600 dark:text-slate-400">
                     {item.studyProgram}
                   </span>
                 </div>
-                <span className="text-teal-600 dark:text-teal-400 font-bold group-hover:translate-x-1 transition-transform">
+                <span className="text-teal-700 dark:text-teal-400 font-bold group-hover:translate-x-1 transition-transform">
                   Detail →
                 </span>
               </div>

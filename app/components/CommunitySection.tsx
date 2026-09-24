@@ -131,7 +131,7 @@ export function CommunitySection() {
         <div className="mb-12 rounded-3xl overflow-hidden glass-card border border-teal-500/30 shadow-2xl grid grid-cols-1 lg:grid-cols-12">
           <div className="lg:col-span-7 relative h-64 sm:h-80 lg:h-auto overflow-hidden">
             <img
-              src="/images/community-lab.jpg"
+              src="/images/community-lab.webp"
               alt="Aktivitas kolaborasi mahasiswa di laboratorium siber"
               width="800"
               height="533"
@@ -149,10 +149,10 @@ export function CommunitySection() {
           <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-4">
             <div>
               <div className="flex items-center gap-2 mb-2">
-                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-amber-500/20 text-amber-800 dark:text-amber-300 border border-amber-500/30">
                   Komunitas Paling Aktif 2026
                 </span>
-                <span className="text-xs text-slate-400">• 230+ Anggota</span>
+                <span className="text-xs text-slate-600 dark:text-slate-400">• 230+ Anggota</span>
               </div>
 
               <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 dark:text-white">
@@ -175,7 +175,7 @@ export function CommunitySection() {
             </div>
 
             <div className="pt-4 border-t border-slate-200/80 dark:border-slate-800 flex items-center justify-between">
-              <span className="text-xs font-bold text-teal-600 dark:text-teal-400">
+              <span className="text-xs font-bold text-teal-700 dark:text-teal-400">
                 Kanal Discord Resmi
               </span>
               <button
@@ -202,7 +202,7 @@ export function CommunitySection() {
               className={`px-3 py-1.5 rounded-full font-semibold transition-all whitespace-nowrap ${
                 selectedCategory === cat.key
                   ? "bg-slate-900 text-white dark:bg-slate-100 dark:text-slate-950 shadow-xs"
-                  : "bg-white/80 dark:bg-slate-900/70 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-800"
+                  : "bg-white/80 dark:bg-slate-900/70 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-800 border border-slate-200/80 dark:border-slate-800"
               }`}
             >
               {cat.label}
@@ -238,7 +238,7 @@ export function CommunitySection() {
                   <h3 className="text-base font-bold text-slate-900 dark:text-white group-hover:text-teal-600 dark:group-hover:text-teal-400 transition-colors">
                     {comm.name}
                   </h3>
-                  <p className="mt-1 text-xs text-amber-600 dark:text-amber-400 font-semibold italic">
+                  <p className="mt-1 text-xs text-amber-700 dark:text-amber-400 font-semibold italic">
                     "{comm.tagline}"
                   </p>
                   <p className="mt-2.5 text-xs text-slate-600 dark:text-slate-300 line-clamp-3 leading-relaxed">
@@ -248,14 +248,14 @@ export function CommunitySection() {
 
                 <div className="mt-5 pt-4 border-t border-slate-200/80 dark:border-slate-800">
                   <div className="flex items-center justify-between text-xs">
-                    <div className="flex items-center gap-1.5 text-slate-500 dark:text-slate-400 font-medium">
-                      <Users className="w-3.5 h-3.5 text-teal-500" />
+                    <div className="flex items-center gap-1.5 text-slate-600 dark:text-slate-400 font-medium">
+                      <Users className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                       <span>{comm.memberCount} Anggota Aktif</span>
                     </div>
 
                     <button
                       onClick={() => setActiveCommunity(comm)}
-                      className="inline-flex items-center gap-1 font-bold text-xs text-teal-600 dark:text-teal-400 hover:text-teal-700 dark:hover:text-teal-300"
+                      className="inline-flex items-center gap-1 font-bold text-xs text-teal-700 dark:text-teal-400 hover:text-teal-800 dark:hover:text-teal-300"
                     >
                       <span>Detail & Gabung</span>
                       <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />

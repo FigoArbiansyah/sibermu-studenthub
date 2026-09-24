@@ -26,12 +26,12 @@ export const links: Route.LinksFunction = () => [
   {
     rel: "preload",
     as: "image",
-    href: "/images/hero-students.jpg",
-    type: "image/jpeg",
+    href: "/images/hero-students.webp",
+    type: "image/webp",
     fetchPriority: "high",
   },
-  { rel: "icon", type: "image/png", href: "/images/sibermu-emblem.png" },
-  { rel: "apple-touch-icon", href: "/images/sibermu-emblem.png" },
+  { rel: "icon", type: "image/webp", href: "/images/sibermu-emblem.webp" },
+  { rel: "apple-touch-icon", href: "/images/sibermu-emblem.webp" },
 ];
 
 export function Layout({ children }: { children: React.ReactNode }) {

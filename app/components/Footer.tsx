@@ -27,7 +27,7 @@ export function Footer() {
             <div className="flex items-center gap-3">
               <div className="w-11 h-11 rounded-xl bg-white p-1.5 flex items-center justify-center border border-teal-500/30 shadow-md shrink-0">
                 <img
-                  src="/images/sibermu-emblem.png"
+                  src="/images/sibermu-emblem.webp"
                   alt="Logo Resmi Universitas Siber Muhammadiyah"
                   width="44"
                   height="44"
@@ -169,7 +169,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Credits & Back to Top */}
-        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-400">
           <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-center sm:text-left">
             <span>© 2026 Biro Kemahasiswaan dan AIK — Universitas Siber Muhammadiyah.</span>
             <span className="hidden sm:inline">•</span>

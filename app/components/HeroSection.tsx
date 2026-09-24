@@ -151,17 +151,17 @@ export function HeroSection() {
           {/* Right Column: Authentic Editorial Photo Showcase */}
           <div className="lg:col-span-5 relative">
             <div className="relative mx-auto max-w-md lg:max-w-none">
-              {/* Photo Frame with subtle glow */}
-              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-900 group">
+              {/* Photo Frame with fixed aspect ratio to prevent CLS */}
+              <div className="relative rounded-3xl overflow-hidden shadow-2xl border-4 border-white dark:border-slate-800 bg-slate-900 group aspect-[4/3] sm:aspect-[16/11] lg:aspect-[4/3] max-h-[460px]">
                 <img
-                  src="/images/hero-students.jpg"
+                  src="/images/hero-students.webp"
                   alt="Mahasiswa Universitas Siber Muhammadiyah berkolaborasi aktif dengan teknologi digital"
                   width="800"
                   height="533"
                   fetchPriority="high"
                   loading="eager"
                   decoding="async"
-                  className="w-full h-[260px] sm:h-[400px] lg:h-[460px] object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                  className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent pointer-events-none" />
 
@@ -169,7 +169,7 @@ export function HeroSection() {
                 <div className="absolute bottom-3.5 left-3.5 right-3.5 sm:bottom-4 sm:left-4 sm:right-4 p-3 sm:p-3.5 rounded-2xl glass-card backdrop-blur-md border border-white/25 dark:border-white/10 text-left flex items-center gap-3 shadow-lg">
                   <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-white p-1 border border-slate-200/80 dark:border-teal-500/30 flex items-center justify-center shrink-0 shadow-xs">
                     <img
-                      src="/images/sibermu-emblem.png"
+                      src="/images/sibermu-emblem.webp"
                       alt="Lambang Resmi Universitas Siber Muhammadiyah"
                       width="36"
                       height="36"
@@ -182,7 +182,7 @@ export function HeroSection() {
                       <span className="text-[11px] font-bold text-slate-900 dark:text-white uppercase tracking-wider truncate">
                         Generasi Siber Berkemajuan
                       </span>
-                      <span className="hidden sm:inline-block text-[9px] font-semibold px-1.5 py-0.2 rounded bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
+                      <span className="hidden sm:inline-block text-[9px] font-bold px-1.5 py-0.5 rounded bg-teal-500/10 text-teal-700 dark:text-teal-300 border border-teal-500/20">
                         SiberMu
                       </span>
                     </div>
@@ -193,7 +193,7 @@ export function HeroSection() {
                 </div>
               </div>
 
-              {/* Floating Badge 1: Trophy & Prestasi (Balanced single top-left floating accent) */}
+              {/* Floating Badge 1: Trophy & Prestasi */}
               <div className="absolute -top-3 left-2 sm:-top-5 sm:-left-5 p-2.5 sm:p-3.5 rounded-2xl glass-card border border-amber-500/30 shadow-xl flex items-center gap-2.5 sm:gap-3 animate-in fade-in slide-in-from-left duration-500 interactive-lift hover:scale-105 cursor-default">
                 <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-500 flex items-center justify-center font-bold text-lg">
                   🏆
@@ -202,7 +202,7 @@ export function HeroSection() {
                   <span className="text-xs font-black text-slate-900 dark:text-white block">
                     120+ Prestasi
                   </span>
-                  <span className="text-[10px] text-slate-500 dark:text-slate-400 font-medium block">
+                  <span className="text-[10px] text-slate-600 dark:text-slate-400 font-medium block">
                     Nasional & Global 2025/2026
                   </span>
                 </div>
@@ -214,49 +214,49 @@ export function HeroSection() {
         {/* Realistic Institutional Metrics Strip */}
         <div className="mt-16 pt-8 border-t border-slate-200/80 dark:border-slate-800 grid grid-cols-2 md:grid-cols-4 gap-4">
           <div className="p-3 text-left">
-            <span className="text-xs font-bold text-teal-600 dark:text-teal-400 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-teal-700 dark:text-teal-400 uppercase tracking-wider block mb-1">
               01 / SISTEM PERKULIAHAN
             </span>
             <div className="text-2xl font-black text-slate-900 dark:text-white">
               100% PJJ Siber
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
               LMS terpadu & tele-presence modern
             </p>
           </div>
 
           <div className="p-3 text-left">
-            <span className="text-xs font-bold text-amber-500 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-amber-600 dark:text-amber-400 uppercase tracking-wider block mb-1">
               02 / KOMUNITAS BAKAT
             </span>
             <div className="text-2xl font-black text-slate-900 dark:text-white">
               15+ Ormawa & UKM
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
               Koding, E-Sport, IMM, HW & Debat
             </p>
           </div>
 
           <div className="p-3 text-left">
-            <span className="text-xs font-bold text-emerald-500 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-emerald-700 dark:text-emerald-400 uppercase tracking-wider block mb-1">
               03 / LAYANAN MAHASISWA
             </span>
             <div className="text-2xl font-black text-slate-900 dark:text-white">
               1x24 Jam SLA
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
               Beasiswa, e-surat & konseling psikolog
             </p>
           </div>
 
           <div className="p-3 text-left">
-            <span className="text-xs font-bold text-blue-500 uppercase tracking-wider block mb-1">
+            <span className="text-xs font-bold text-blue-600 dark:text-blue-400 uppercase tracking-wider block mb-1">
               04 / SYIAR KEAGAMAAN
             </span>
             <div className="text-2xl font-black text-slate-900 dark:text-white">
               Dwi-Pekanan
             </div>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5">
               Kajian virtual & podcast inspiratif
             </p>
           </div>

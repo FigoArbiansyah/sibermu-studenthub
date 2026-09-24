@@ -1,13 +1,14 @@
-const CACHE_NAME = 'sibermu-aik-v1';
+const CACHE_NAME = 'sibermu-aik-v2';
 const STATIC_ASSETS = [
   '/',
   '/favicon.ico',
   '/manifest.webmanifest',
-  '/images/hero-students.jpg',
-  '/images/community-lab.jpg',
-  '/images/champions.jpg',
-  '/images/aik-seminar.jpg',
-  '/images/podcast-studio.jpg'
+  '/images/hero-students.webp',
+  '/images/community-lab.webp',
+  '/images/champions.webp',
+  '/images/aik-seminar.webp',
+  '/images/podcast-studio.webp',
+  '/images/sibermu-emblem.webp'
 ];
 
 // Install: Precaches core assets

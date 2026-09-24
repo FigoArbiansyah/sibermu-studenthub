@@ -126,10 +126,10 @@ END:VCALENDAR`;
           </div>
 
           <div className="flex items-center gap-3 self-start md:self-auto text-xs">
-            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 text-amber-600 dark:text-amber-400 font-bold border border-amber-500/20">
+            <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 text-amber-800 dark:text-amber-300 font-bold border border-amber-500/20">
               <span className="w-4 h-4 rounded-full bg-white p-0.5 flex items-center justify-center shrink-0 shadow-2xs">
                 <img
-                  src="/images/sibermu-emblem.png"
+                  src="/images/sibermu-emblem.webp"
                   alt="SiberMu"
                   width="16"
                   height="16"
@@ -154,7 +154,7 @@ END:VCALENDAR`;
                     : "glass-card border-slate-200/80 dark:border-slate-800 hover:border-slate-300 dark:hover:border-slate-700"
                 }`}
               >
-                <span className="text-xs font-mono font-bold text-amber-500 block mb-1">
+                <span className="text-xs font-mono font-bold text-amber-700 dark:text-amber-400 block mb-1">
                   Pilar {pillar.number}
                 </span>
                 <span className="text-xs sm:text-sm font-bold text-slate-900 dark:text-white block leading-tight">
@@ -168,7 +168,7 @@ END:VCALENDAR`;
           <div className="rounded-3xl glass-card border border-teal-500/20 shadow-2xl overflow-hidden grid grid-cols-1 lg:grid-cols-12">
             <div className="lg:col-span-7 p-6 sm:p-10 flex flex-col justify-between space-y-6">
               <div className="space-y-3">
-                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 text-teal-700 dark:text-teal-300 text-xs font-semibold">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-lg bg-teal-500/10 text-teal-800 dark:text-teal-300 text-xs font-semibold">
                   <span>Pilar Ke-{currentPillarData.number}</span>
                   <span>•</span>
                   <span className="font-arabic text-sm">{currentPillarData.arabicPhrase}</span>
@@ -204,7 +204,7 @@ END:VCALENDAR`;
             {/* Right Photo Column: Real Academic Islamic Seminar */}
             <div className="lg:col-span-5 relative h-72 sm:h-96 lg:h-auto overflow-hidden bg-slate-900">
               <img
-                src="/images/aik-seminar.jpg"
+                src="/images/aik-seminar.webp"
                 alt="Seminar Akademik Islam Kontemporer dan Kajian Tarjih di Universitas Siber Muhammadiyah"
                 width="800"
                 height="533"
@@ -241,14 +241,14 @@ END:VCALENDAR`;
 
             {/* Countdown Badge */}
             <div className="flex items-center gap-2 p-3 rounded-2xl bg-slate-100 dark:bg-slate-900 border border-teal-500/30 self-start md:self-auto">
-              <span className="text-xs font-medium text-slate-500 dark:text-slate-400">
+              <span className="text-xs font-medium text-slate-600 dark:text-slate-400">
                 Kajian Terdekat Dimulai:
               </span>
-              <div className="flex items-center gap-1 font-mono text-xs font-bold text-teal-600 dark:text-teal-400">
-                <span className="p-1 rounded bg-white dark:bg-slate-800 shadow-xs">{timeLeft.days}h</span>:
-                <span className="p-1 rounded bg-white dark:bg-slate-800 shadow-xs">{timeLeft.hours}j</span>:
-                <span className="p-1 rounded bg-white dark:bg-slate-800 shadow-xs">{timeLeft.minutes}m</span>:
-                <span className="p-1 rounded bg-white dark:bg-slate-800 shadow-xs">{timeLeft.seconds}d</span>
+              <div className="flex items-center gap-1 font-mono text-xs font-bold text-teal-700 dark:text-teal-300">
+                <span className="p-1 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-teal-300 shadow-xs">{timeLeft.days}h</span>:
+                <span className="p-1 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-teal-300 shadow-xs">{timeLeft.hours}j</span>:
+                <span className="p-1 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-teal-300 shadow-xs">{timeLeft.minutes}m</span>:
+                <span className="p-1 rounded bg-white dark:bg-slate-800 text-slate-800 dark:text-teal-300 shadow-xs">{timeLeft.seconds}d</span>
               </div>
             </div>
           </div>
@@ -262,11 +262,11 @@ END:VCALENDAR`;
               >
                 <div>
                   <div className="flex items-center justify-between mb-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-teal-500/10 text-teal-600 dark:text-teal-400 border border-teal-500/20">
+                    <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold uppercase bg-teal-500/10 text-teal-800 dark:text-teal-300 border border-teal-500/20">
                       {session.category}
                     </span>
-                    <span className="flex items-center gap-1 text-[11px] text-slate-500 dark:text-slate-400">
-                      <Users className="w-3.5 h-3.5 text-teal-500" />
+                    <span className="flex items-center gap-1 text-[11px] text-slate-600 dark:text-slate-400">
+                      <Users className="w-3.5 h-3.5 text-teal-600 dark:text-teal-400" />
                       <span>{session.registeredCount} Pendaftar</span>
                     </span>
                   </div>
@@ -279,7 +279,7 @@ END:VCALENDAR`;
                     <span className="text-xs font-bold text-slate-800 dark:text-slate-200 block">
                       {session.speaker}
                     </span>
-                    <span className="text-[11px] text-slate-500 dark:text-slate-400 block mt-0.5">
+                    <span className="text-[11px] text-slate-600 dark:text-slate-400 block mt-0.5">
                       {session.speakerTitle}
                     </span>
                   </div>

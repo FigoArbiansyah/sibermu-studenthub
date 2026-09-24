@@ -46,20 +46,20 @@ export function DailyHikmahWidget() {
 
       <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-6 mb-6 pb-6 border-b border-slate-200/80 dark:border-slate-800">
         <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-600 dark:text-amber-400 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-amber-500/15 text-amber-700 dark:text-amber-400 flex items-center justify-center">
             <Quote className="w-5 h-5" />
           </div>
           <div>
             <h3 className="font-extrabold text-base sm:text-lg text-slate-900 dark:text-white">
               Mutiara Hikmah & Risalah Pencerahan
             </h3>
-            <p className="text-xs text-slate-500 dark:text-slate-400">
+            <p className="text-xs text-slate-600 dark:text-slate-400">
               Inspirasi K.H. Ahmad Dahlan & Ajaran Islam Berkemajuan untuk Mahasiswa
             </p>
           </div>
         </div>
 
-        <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+        <span className="px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-amber-500/10 text-amber-800 dark:text-amber-300 border border-amber-500/30">
           Tema: {currentQuote.tag}
         </span>
       </div>
@@ -71,11 +71,11 @@ export function DailyHikmahWidget() {
         </blockquote>
 
         <div className="mt-4 flex items-center gap-2">
-          <span className="text-sm font-bold text-teal-600 dark:text-teal-400">
+          <span className="text-sm font-bold text-teal-700 dark:text-teal-400">
             {currentQuote.author}
           </span>
-          <span className="text-slate-400">•</span>
-          <span className="text-xs text-slate-500 dark:text-slate-400 font-medium">
+          <span className="text-slate-500">•</span>
+          <span className="text-xs text-slate-600 dark:text-slate-400 font-medium">
             {currentQuote.source}
           </span>
         </div>
@@ -94,11 +94,11 @@ export function DailyHikmahWidget() {
         <div className="flex items-center gap-3">
           <button
             onClick={handleLike}
-            aria-label={isLiked ? "Batal menyukai kutipan ini" : "Sukai kutipan ini"}
+            aria-label={isLiked ? `${likes} Menyukai (Batal menyukai)` : `${likes} Menyukai (Sukai kutipan ini)`}
             className={`flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition-all focus-visible:ring-2 focus-visible:ring-teal-500 ${
               isLiked
-                ? "bg-rose-500/15 text-rose-500"
-                : "bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-rose-500/10 hover:text-rose-500"
+                ? "bg-rose-500/15 text-rose-600 dark:text-rose-400"
+                : "bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-rose-500/10 hover:text-rose-600"
             }`}
           >
             <Heart className={`w-3.5 h-3.5 ${isLiked ? "fill-rose-500" : ""}`} aria-hidden="true" />
@@ -107,13 +107,13 @@ export function DailyHikmahWidget() {
 
           <button
             onClick={handleCopyQuote}
-            aria-label="Salin teks kutipan hikmah ke clipboard"
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus-visible:ring-2 focus-visible:ring-teal-500"
+            aria-label={copied ? "Tersalin ke Clipboard!" : "Salin Kutipan (Salin ke clipboard)"}
+            className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-all focus-visible:ring-2 focus-visible:ring-teal-500"
           >
             {copied ? (
               <>
-                <Check className="w-3.5 h-3.5 text-emerald-500" aria-hidden="true" />
-                <span className="text-emerald-600 dark:text-emerald-400 font-bold">Tersalin ke Clipboard!</span>
+                <Check className="w-3.5 h-3.5 text-emerald-600 dark:text-emerald-400" aria-hidden="true" />
+                <span className="text-emerald-700 dark:text-emerald-300 font-bold">Tersalin ke Clipboard!</span>
               </>
             ) : (
               <>
@@ -126,7 +126,7 @@ export function DailyHikmahWidget() {
 
         <button
           onClick={handleNextQuote}
-          aria-label="Tampilkan mutiara hikmah berikutnya"
+          aria-label={`Hikmah Selanjutnya (${currentIndex + 1}/${quotesData.length}) - Tampilkan mutiara berikutnya`}
           className="flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-amber-500 hover:bg-amber-600 text-slate-950 transition-all shadow-sm active:scale-95 focus-visible:ring-2 focus-visible:ring-teal-500"
         >
           <RefreshCw className="w-3.5 h-3.5" aria-hidden="true" />

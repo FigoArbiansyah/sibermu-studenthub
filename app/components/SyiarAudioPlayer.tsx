@@ -157,7 +157,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
         {/* Left: Real Studio Photo Preview */}
         <div className="lg:col-span-5 relative h-64 sm:h-80 lg:h-auto overflow-hidden bg-slate-900 group">
           <img
-            src="/images/podcast-studio.jpg"
+            src="/images/podcast-studio.webp"
             alt="Studio podcast syiar digital mahasiswa Universitas Siber Muhammadiyah"
             width="800"
             height="533"
@@ -188,19 +188,19 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
           {/* Header Info */}
           <div>
             <div className="flex items-center justify-between gap-2 mb-2">
-              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-500/15 text-teal-600 dark:text-teal-400 border border-teal-500/20">
+              <span className="px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-teal-500/15 text-teal-800 dark:text-teal-300 border border-teal-500/20">
                 {currentTrack.category}
               </span>
-              <span className="text-[11px] text-slate-400">
+              <span className="text-[11px] text-slate-600 dark:text-slate-400">
                 Dirilis: {currentTrack.releaseDate}
               </span>
             </div>
 
-            <h4 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
+            <h3 className="text-lg sm:text-xl font-bold text-slate-900 dark:text-white leading-snug">
               {currentTrack.title}
-            </h4>
-            <p className="text-xs text-slate-500 dark:text-slate-400 mt-1">
-              Narasumber: <span className="font-semibold text-teal-600 dark:text-teal-400">{currentTrack.speaker}</span>
+            </h3>
+            <p className="text-xs text-slate-600 dark:text-slate-400 mt-1">
+              Narasumber: <span className="font-semibold text-teal-700 dark:text-teal-400">{currentTrack.speaker}</span>
             </p>
             <p className="mt-2 text-xs text-slate-600 dark:text-slate-300 line-clamp-2 leading-relaxed">
               {currentTrack.description}
@@ -208,7 +208,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
             {/* Equalizer Sound Waves Animation */}
             <div className="mt-4 flex items-center gap-1.5 h-6 p-2 rounded-xl bg-slate-100 dark:bg-slate-900/60 border border-slate-200/80 dark:border-slate-800">
-              <Headphones className="w-4 h-4 text-teal-500 shrink-0 mr-1" />
+              <Headphones className="w-4 h-4 text-teal-600 dark:text-teal-400 shrink-0 mr-1" />
               {[35, 70, 50, 95, 60, 100, 45, 80, 65, 30, 85, 50, 75, 40, 90, 60, 40].map((h, i) => (
                 <div
                   key={i}
@@ -220,7 +220,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                   }}
                 />
               ))}
-              <span className="text-[10px] font-mono text-slate-400 ml-auto">
+              <span className="text-[10px] font-mono text-slate-600 dark:text-slate-400 ml-auto">
                 {isPlaying ? "Audio Aktif (Harmonik Suara)" : "Audio Dijeda"}
               </span>
             </div>
@@ -229,7 +229,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
           {/* Player Scrubber & Transport Buttons */}
           <div className="space-y-3">
             {/* Scrubber */}
-            <div className="flex items-center gap-2 text-xs font-mono text-slate-400">
+            <div className="flex items-center gap-2 text-xs font-mono text-slate-600 dark:text-slate-400">
               <span>{formatTime(currentTimeSec)}</span>
               <div className="flex-1 h-2 bg-slate-200 dark:bg-slate-800 rounded-full overflow-hidden relative cursor-pointer">
                 <div
@@ -244,7 +244,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
             <div className="flex flex-wrap items-center justify-between gap-3 pt-1">
               {/* Episode selector buttons */}
               <div className="flex items-center gap-1.5">
-                <span className="text-[11px] text-slate-400 mr-1">Episode:</span>
+                <span className="text-[11px] text-slate-600 dark:text-slate-400 mr-1">Episode:</span>
                 {syiarAudioEpisodes.map((_, idx) => (
                   <button
                     key={idx}
@@ -256,7 +256,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                     className={`w-6 h-6 rounded-lg text-xs font-bold transition-all ${
                       currentTrackIndex === idx
                         ? "bg-teal-600 text-white shadow-xs"
-                        : "bg-slate-200/80 dark:bg-slate-800 text-slate-600 dark:text-slate-400 hover:bg-slate-300"
+                        : "bg-slate-200/80 dark:bg-slate-800 text-slate-700 dark:text-slate-300 hover:bg-slate-300"
                     }`}
                   >
                     {idx + 1}
@@ -269,7 +269,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
                 <div className="hidden sm:flex items-center gap-1.5 bg-slate-100 dark:bg-slate-800 px-2 py-1 rounded-lg">
                   <button
                     onClick={() => setIsMuted(!isMuted)}
-                    className="text-slate-500 hover:text-teal-500"
+                    className="text-slate-600 dark:text-slate-300 hover:text-teal-600"
                     aria-label={isMuted ? "Aktifkan suara audio" : "Bisukan suara audio"}
                     title={isMuted ? "Unmute" : "Mute"}
                   >
@@ -291,8 +291,8 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
                 <button
                   onClick={cycleSpeed}
-                  className="px-2 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200"
-                  aria-label="Ubah kecepatan pemutaran audio"
+                  className="px-2 py-1 rounded-md text-xs font-mono font-bold bg-slate-100 dark:bg-slate-800 text-slate-800 dark:text-slate-200 hover:bg-slate-200"
+                  aria-label={`${playbackSpeed}x - Ubah kecepatan pemutaran audio`}
                   title="Kecepatan pemutaran"
                 >
                   {playbackSpeed}x
@@ -300,7 +300,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
                 <button
                   onClick={handlePrev}
-                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
+                  className="p-1.5 text-slate-700 dark:text-slate-300 hover:text-teal-600 focus-visible:ring-2 focus-visible:ring-teal-500"
                   aria-label="Episode sebelumnya"
                 >
                   <SkipBack className="w-4 h-4" aria-hidden="true" />
@@ -316,7 +316,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
                 <button
                   onClick={handleNext}
-                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
+                  className="p-1.5 text-slate-700 dark:text-slate-300 hover:text-teal-600 focus-visible:ring-2 focus-visible:ring-teal-500"
                   aria-label="Episode berikutnya"
                 >
                   <SkipForward className="w-4 h-4" aria-hidden="true" />
@@ -324,7 +324,7 @@ export function SyiarAudioPlayer({ onShowToast }: SyiarAudioPlayerProps) {
 
                 <button
                   onClick={handleShare}
-                  className="p-1.5 text-slate-500 hover:text-teal-500 focus-visible:ring-2 focus-visible:ring-teal-500"
+                  className="p-1.5 text-slate-600 dark:text-slate-300 hover:text-teal-600 focus-visible:ring-2 focus-visible:ring-teal-500"
                   aria-label="Bagikan episode podcast"
                 >
                   {copiedShare ? <Check className="w-4 h-4 text-emerald-500" aria-hidden="true" /> : <Share2 className="w-4 h-4" aria-hidden="true" />}
